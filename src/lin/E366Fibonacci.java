@@ -35,5 +35,20 @@ public class E366Fibonacci {
      */
     public int fibonacci(int n) {
         // write your code here
+        if(n == 0 ) {
+            return 0;
+        }
+        if(n == 1) {
+            return 1;
+        }
+        int x = 0; int y = 1;
+        int returnValue = 0;
+        for(int i = 2; 1 <= n; i++) {
+            returnValue = x + y;
+            x = y;
+            y = returnValue;
+        }
+
+        return returnValue;
     }
 }
