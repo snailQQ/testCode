@@ -31,12 +31,35 @@ package lin;
  * }
  */
 public class E177 {
+    public class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+    }
+    private TreeNode buildTree(int[] num, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+
+        TreeNode node = new TreeNode(num[(start + end) / 2]);
+        node.left = buildTree(num, start, (start + end) / 2 - 1);
+        node.right = buildTree(num, (start + end) / 2 + 1, end);
+        return node;
+    }
     /**
      * @param A: an integer array
      * @return: a tree node
      */
-    public TreeNode sortedArrayToBST(int[] A) {
+    public TreeNode sortedArrayToBST(int[] num) {
         // write your code here
+            if (num == null) {
+                return null;
+            }
+            return buildTree(num, 0, num.length - 1);
+
     }
 
 }

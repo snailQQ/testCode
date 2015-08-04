@@ -2,6 +2,7 @@ package lin;
 
 /**
  * Created by Paul on 8/2/15.
+ * http://www.lintcode.com/en/problem/count-1-in-binary/
  */
 //Count 1 in Binary
 //
@@ -22,7 +23,22 @@ public class E365CountOneInBinary {
      * @param num: an integer
      * @return: an integer, the number of ones in num
      */
-    public int countOnes(int num) {
+    public static int countOnes(int num) {
         // write your code here
+        int count = 0;
+        for(int i =0; i<32; i++){
+            if( (num&1) == 1) {
+                count++;
+
+            }
+            num = num >>> 1;
+
+        }
+        return count;
+    }
+
+    public  static void main(String [] args) {
+        int x = 1023;
+        int y = countOnes(x);
     }
 }
