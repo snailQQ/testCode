@@ -25,19 +25,19 @@ public class E397LongestIncreasing {
      * @param A an array of Integer
      * @return  an integer
      */
-    public int longestIncreasingContinuousSubsequence(int[] A) {
-        // Write your code here
-        int max = 0;
-        if(A == null) {
-            return 0;
-        }
-        if(A.length == 1){
-            return 1;
-        } else {
-            for(int i = 1; i < A.length; i++) {
-                if()
-            }
-        }
-        https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
-    }
+//    public int longestIncreasingContinuousSubsequence(int[] A) {
+//        // Write your code here
+//        int max = 0;
+//        if(A == null) {
+//            return 0;
+//        }
+//        if(A.length == 1){
+//            return 1;
+//        } else {
+//            for(int i = 1; i < A.length; i++) {
+//                if()
+//            }
+//        }
+//        https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
+//    }
 }

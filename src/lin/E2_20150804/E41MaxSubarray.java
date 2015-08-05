@@ -26,5 +26,6 @@ public class E41MaxSubarray {
      */
 //    public int maxSubArray(ArrayList<Integer> nums) {
 //        // write your code
+//    http://blog.csdn.net/fightforyourdream/article/details/14515425
 //    }
 }

@@ -23,4 +23,5 @@ public class E46MajorityNumber {
 //    public int majorityNumber(ArrayList<Integer> nums) {
 //        // write your code
 //    }
+//    http://blog.csdn.net/exceptional_derek/article/details/43371973
 }

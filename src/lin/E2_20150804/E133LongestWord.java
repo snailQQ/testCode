@@ -1,5 +1,8 @@
 package lin.E2_20150804;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by Paul on 8/3/15.
  * http://www.lintcode.com/en/problem/longest-words/
@@ -39,7 +42,36 @@ public class E133LongestWord {
      * @param dictionary: an array of strings
      * @return: an arraylist of strings
      */
-//    ArrayList<String> longestWords(String[] dictionary) {
-//        // write your code here
-//    }
+    static ArrayList<String>  longestWords(String[] dictionary) {
+        // write your code here
+        if(dictionary == null) {
+            return null;
+        }
+        int max = 0;
+        HashMap<Integer, ArrayList<String>> mapper = new HashMap<Integer, ArrayList<String>>();
+
+        for(int i = 0; i < dictionary.length; i++) {
+            String word = dictionary[i];
+            if(mapper.containsKey(word.length())) {
+                ArrayList<String> list = mapper.get(word.length());
+                list.add(word);
+                mapper.put(word.length(),list);
+            }else {
+                if(word.length()> max) {
+                    max = word.length();
+                }
+                ArrayList<String> list = new ArrayList<String>();
+                list.add(word);
+                mapper.put(word.length(), list);
+            }
+        }
+        return mapper.get(max);
+
+    }
+
+    public static void main(String [] args) {
+        String[] a = {"dog","google","facebook","internationalization","blabla"};
+        ArrayList<String> list = longestWords(a);
+
+    }
 }
