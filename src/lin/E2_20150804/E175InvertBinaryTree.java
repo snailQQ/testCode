@@ -29,6 +29,14 @@ public class E175InvertBinaryTree {
      *     }
      * }
      */
+    public class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+    }
 
         /**
          * @param root: a TreeNode, the root of the binary tree
@@ -38,3 +46,49 @@ public class E175InvertBinaryTree {
             // write your code here
         }
 }
+
+//1
+//    public TreeNode invertTree(TreeNode root) {
+//        if(root!=null){
+//            helper(root);
+//        }
+//
+//        return root;
+//    }
+//
+//    public void helper(TreeNode p){
+//
+//        TreeNode temp = p.left;
+//        p.left = p.right;
+//        p.right = temp;
+//
+//        if(p.left!=null)
+//            helper(p.left);
+//
+//        if(p.right!=null)
+//            helper(p.right);
+//    }
+
+
+//2
+//public TreeNode invertTree(TreeNode root) {
+//    LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+//
+//    if(root!=null){
+//        queue.add(root);
+//    }
+//
+//    while(!queue.isEmpty()){
+//        TreeNode p = queue.poll();
+//        if(p.left!=null)
+//            queue.add(p.left);
+//        if(p.right!=null)
+//            queue.add(p.right);
+//
+//        TreeNode temp = p.left;
+//        p.left = p.right;
+//        p.right = temp;
+//    }
+//
+//    return root;
+//}

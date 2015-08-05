@@ -36,8 +36,8 @@ public class E156MergeIntervals {
          * @param intervals: Sorted interval list.
          * @return: A new sorted interval list.
          */
-        public List<Interval> merge(List<Interval> intervals) {
-            // write your code here
-        }
+//        public List<Interval> merge(List<Interval> intervals) {
+//            // write your code here
+//        }
 
     }

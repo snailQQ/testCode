@@ -20,7 +20,7 @@ public class E46MajorityNumber {
      * @param nums: a list of integers
      * @return: find a  majority number
      */
-    public int majorityNumber(ArrayList<Integer> nums) {
-        // write your code
-    }
+//    public int majorityNumber(ArrayList<Integer> nums) {
+//        // write your code
+//    }
 }

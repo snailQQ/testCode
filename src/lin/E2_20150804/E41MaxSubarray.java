@@ -24,7 +24,7 @@ public class E41MaxSubarray {
      * @param nums: A list of integers
      * @return: A integer indicate the sum of max subarray
      */
-    public int maxSubArray(ArrayList<Integer> nums) {
-        // write your code
-    }
+//    public int maxSubArray(ArrayList<Integer> nums) {
+//        // write your code
+//    }
 }

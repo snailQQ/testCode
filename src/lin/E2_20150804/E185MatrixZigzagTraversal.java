@@ -25,7 +25,7 @@ public class E185MatrixZigzagTraversal {
      * @param matrix: a matrix of integers
      * @return: an array of integers
      */
-    public int[] printZMatrix(int[][] matrix) {
-        // write your code here
-    }
+//    public int[] printZMatrix(int[][] matrix) {
+//        // write your code here
+//    }
 }
