@@ -38,6 +38,6 @@ public class E397LongestIncreasing {
                 if()
             }
         }
-
+        https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
     }
 }
