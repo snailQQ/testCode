@@ -24,5 +24,23 @@ public class E373PartitionArrayByOddEven {
      */
     public void partitionArray(int[] nums) {
         // write your code here;
+        for(int i = 0, j = nums.length -1; i < j;){
+            if(nums[i] % 2 == 0 && nums[j] % 2 == 1) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+                j--;
+                continue;
+            }
+            if(nums[i] % 2 == 0 && nums[j] % 2 == 0){
+                j--;
+                continue;
+            }
+            if(nums[i] % 2 == 1) {
+                i++;
+                continue;
+            }
+        }
     }
 }

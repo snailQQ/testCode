@@ -23,8 +23,34 @@ public class E407PlusOne {
      * @param digits a number represented as an array of digits
      * @return the result
      */
-//    public int[] plusOne(int[] digits) {
-//        // Write your code here
-//    }
+    public int[] plusOne(int[] digits) {
+        // Write your code here
+        if(digits == null) {
+            return null;
+        }
+        int carry = (digits[digits.length-1] + 1) / 10;
+        digits[digits.length-1] = (digits[digits.length-1] + 1) % 10;
+
+        for(int i = digits.length - 2; i > 0; i--){
+            int number = (digits[i] + carry) % 10;
+            carry = (digits[i] + 1) / 10;
+            digits[i] = number;
+        }
+
+        if(carry == 0) {
+            return digits;
+        }else if(digits[0] == 9){
+            int[] newDigits = new int[digits.length+1];
+            newDigits[0] = 1;
+            newDigits[1] = 0;
+            for(int i = 1; i < digits.length; i++) {
+                newDigits[i+1] = digits[i];
+            }
+            return newDigits;
+        }else {
+            digits[0] = digits[0] + 1;
+            return digits;
+        }
+    }
 
 }

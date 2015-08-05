@@ -24,7 +24,10 @@ public class E142O1CheckPower2 {
  * @param n: An integer
  * @return: True or false
  */
-//    public boolean checkPowerOf2(int n) {
+    public boolean checkPowerOf2(int n) {
 //        // write your code here
-//    }
+    if (n<=0) return false;
+    boolean res = ((n & (n-1))==0) ? true : false;
+    return res;
+    }
 }

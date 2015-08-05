@@ -3,11 +3,14 @@ package lin.E3_20150805;
 /**
  * Created by Paul on 8/5/15.
  * http://www.lintcode.com/en/problem/permutation-index/
+ * http://blog.csdn.net/u010500263/article/details/18178243
  */
 //Permutation Index
 //
 //        24% Accepted
-//        Given a permutation which contains no repeated number, find its index in all the permutations of these numbers, which are ordered in lexicographical order. The index begins at 1.
+//        Given a permutation which contains no repeated number,
+// find its index in all the permutations of these numbers,
+// which are ordered in lexicographical order. The index begins at 1.
 //
 //        Have you met this question in a real interview? Yes
 //        Example
