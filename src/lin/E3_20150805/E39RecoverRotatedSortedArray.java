@@ -1,5 +1,7 @@
 package lin.E3_20150805;
 
+import java.util.ArrayList;
+
 /**
  * Created by Paul on 8/5/15.
  * http://www.lintcode.com/en/problem/recover-rotated-sorted-array/
@@ -26,7 +28,43 @@ public class E39RecoverRotatedSortedArray {
      * @param nums: The rotated sorted array
      * @return: void
      */
-//    public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
-//        // write your code
-//    }
+    public static void recoverRotatedSortedArray(ArrayList<Integer> nums) {
+
+        // write your code
+        if(nums == null) {
+            return;
+        }
+
+        Integer pre = nums.get(0);
+        ArrayList<Integer> start = new ArrayList<Integer>();
+        ArrayList<Integer> end = new ArrayList<Integer>();
+
+        for(Integer element : nums) {
+            if(element < pre) {
+               start.add(element);
+
+            }else {
+                if(start.size() != 0) {
+                    start.add(element);
+                }else {
+                    end.add(element);
+                }
+            }
+            pre = element;
+        }
+
+        start.addAll(end);
+        nums.clear();
+        nums.addAll(start);
+    }
+
+    public static void main(String [] args) {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        nums.add(4);
+        nums.add(5);
+        nums.add(1);
+        nums.add(2);
+        nums.add(3);
+        recoverRotatedSortedArray(nums);
+    }
 }
