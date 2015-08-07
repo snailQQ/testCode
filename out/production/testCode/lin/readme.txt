@@ -46,7 +46,7 @@ Binary Search Easy
 30 % Remove Duplicates from Sorted Array II Easy
 39 % Remove Duplicates from Sorted List Easy
 33 % Remove Element Easy
-30 % Remove Nth Node From End of List Easy
+30 % Remove Nth Node From End of List Easy///
 28 % Reverse Integer Easy
 41 % Reverse Linked List Easy
 22 % Reverse Words in a String Easy

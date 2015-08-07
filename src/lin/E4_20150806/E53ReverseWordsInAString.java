@@ -28,7 +28,23 @@ public class E53ReverseWordsInAString {
      * @param s : A string
      * @return : A string
      */
-//    public String reverseWords(String s) {
-//        // write your code
-//    }
+    public static String reverseWords(String s) {
+        // write your code
+        String[] a = s.split(" ");
+        String returnValue = "";
+        for(int i = a.length-1; i >=0; i--) {
+            if(i != a.length-1) {
+                returnValue += " ";
+            }
+            returnValue += a[i];
+        }
+        return returnValue;
+    }
+
+    public static void main(String [] args) {
+        String a = "the sky is blue";
+        String b = reverseWords(a);
+
+    }
+
 }
