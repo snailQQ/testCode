@@ -6,7 +6,8 @@ package lin.E5_20150807;
 //Valid Parentheses
 //
 //        28% Accepted
-//        Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+//        Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+// determine if the input string is valid.
 //
 //        Have you met this question in a real interview? Yes
 //        Example
