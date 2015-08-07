@@ -2,6 +2,7 @@ package lin.E4_20150806;
 
 /**
  * Created by Paul on 8/5/15.
+ * http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/
  */
 //Remove Nth Node From End of List
 //

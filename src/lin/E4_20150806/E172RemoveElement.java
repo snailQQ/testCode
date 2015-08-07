@@ -22,7 +22,31 @@ public class E172RemoveElement {
      *@param elem: An integer
      *@return: The new length after remove
      */
-//    public int removeElement(int[] A, int elem) {
-//        // write your code here
-//    }
+    public static int removeElement(int[] A, int elem) {
+        // write your code here
+        if(A == null || A.length == 0) {
+            return 0;
+        }
+        int count = 0;
+        for(int i = 0; i < A.length - 1; i++) {
+            if(A[i] == elem) {
+                continue;
+            }else{
+                A[count] = A[i];
+                count++;
+            }
+        }
+        if(A[A.length - 1] != elem) {
+            A[count] = A[A.length - 1];
+            count++;
+        }
+        return count;
+    }
+
+    public static void main(String [] args) {
+        int[] A = {0,4,4,0,0,2,4,4};
+        int value = removeElement(A, 4);
+
+    }
+
 }

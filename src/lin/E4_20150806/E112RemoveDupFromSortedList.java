@@ -25,11 +25,54 @@ public class E112RemoveDupFromSortedList {
      *     }
      * }
      */
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
+    }
     /**
      * @param ListNode head is the head of the linked list
      * @return: ListNode head of linked list
      */
-//    public static ListNode deleteDuplicates(ListNode head) {
-//        // write your code here
-//    }
+    public static ListNode deleteDuplicates(ListNode head) {
+        // write your code here
+        if(head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode dummy = head;
+        while(head.next != null) {
+            if(head.next == null) {
+                return dummy;
+            } else {
+                if(head.val == head.next.val){
+                    head.next = head.next.next;
+                }else {
+                    head = head.next;
+                }
+            }
+        }
+        return dummy;
+    }
+
+    public static void main(String [] args) {
+        //        Given 1->1->2, return 1->2.
+//        Given 1->1->2->3->3, return 1->2->3.
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(1);
+        ListNode l3 = new ListNode(2);
+        ListNode l4 = new ListNode(3);
+        ListNode l5 = new ListNode(3);
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
+        l4.next = l5;
+
+        ListNode returnList = deleteDuplicates(l1);
+
+    }
 }
