@@ -6,7 +6,8 @@ package lin.M6_20150810;
 //Binary Tree Level Order Traversal
 //
 //        32% Accepted
-//        Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+//        Given a binary tree, return the level order traversal of its nodes' values.
+// (ie, from left to right, level by level).
 //
 //        Have you met this question in a real interview? Yes
 //        Example

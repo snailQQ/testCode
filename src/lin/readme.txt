@@ -69,7 +69,7 @@ Binary Search Easy
 23 % Valid Palindrome Easy
 28 % Valid Parentheses Easy
 28 % Valid Sudoku Easy
-26 % 2 Sum Medium
+26 % 2 Sum Medium http://blog.csdn.net/xiaochunyong/article/details/7748713
 19 % 3 Sum Medium
 29 % 3 Sum Closest Medium
 18 % 4 Sum Medium-------------------------------7
