@@ -82,7 +82,7 @@ Binary Search Easy
 41 % Best Time to Buy and Sell Stock Medium
 50 % Best Time to Buy and Sell Stock II Medium
 26 % Best Time to Buy and Sell Stock III Medium
-32 % Binary Tree Level Order Traversal Medium-------------------------------8
+32 % Binary Tree Level Order Traversal Medium-------------------------------10
 41 % Binary Tree Level Order Traversal II Medium
 23 % Binary Tree Maximum Path Sum Medium
 16 % Binary Tree Serialization Medium
@@ -92,7 +92,7 @@ Binary Search Easy
 28 % Coins in a Line II Medium
 27 % Combination Sum Medium
 26 % Combination Sum II Medium
-32 % Combinations Medium-------------------------------9
+32 % Combinations Medium-------------------------------11
 29 % Construct Binary Tree from Inorder and Postorder Traversal Medium
 29 % Construct Binary Tree from Preorder and Inorder Traversal Medium
 39 % Container With Most Water Medium
