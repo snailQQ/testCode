@@ -1,5 +1,8 @@
 package lin.M7_20150811;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Paul on 8/10/15.
  * http://www.lintcode.com/en/problem/combinations/
@@ -22,8 +25,32 @@ public class M152Combinations {
      * @param k: Given the numbers of combinations
      * @return: All the combinations of k numbers out of 1..n
      */
-//    public List<List<Integer>> combine(int n, int k) {
-//        // write your code here
-//    }
+    public static List<List<Integer>> combine(int n, int k) {
+        // write your code here
+        List<List<Integer>> rst = new ArrayList<List<Integer>>();
+        if(n <= 0 || k == 0) {
+            return rst;
+        }
+        List<Integer> tmp = new ArrayList<Integer>();
+        dfsHelper(rst, tmp, n, k, 1);
+        return rst;
+    }
+
+    private static void dfsHelper(List<List<Integer>> rst, List<Integer> tmp, int n, int k, int pos) {
+        if(tmp.size() == k) {
+            rst.add(new ArrayList<Integer>(tmp));
+            return;
+        }
+        for(int i = pos; i <= n; i++) {
+            tmp.add(i);
+            dfsHelper(rst, tmp, n, k, i + 1);
+            tmp.remove(tmp.size() - 1);
+        }
+
+    }
+
+    public static void main(String [] args) {
+        List<List<Integer>> rst = combine(4,2);
+    }
 
 }

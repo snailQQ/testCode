@@ -38,60 +38,60 @@ public class M135CombinationSum {
      * @param target:An integer
      * @return: A list of lists of integers
      */
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        // write your code here
-        List<List<Integer>> rst = new ArrayList<List<Integer>>();
-        if(candidates == null || candidates.length == 0) {
-            return rst;
-        }
-        List<Integer> tmp = new ArrayList<Integer>();
-        dfsHelper(rst, tmp, candidates, 0);
-        return rst;
-    }
+//    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+//        // write your code here
+//        List<List<Integer>> rst = new ArrayList<List<Integer>>();
+//        if(candidates == null || candidates.length == 0) {
+//            return rst;
+//        }
+//        List<Integer> tmp = new ArrayList<Integer>();
+//        dfsHelper(rst, tmp, candidates, 0);
+//        return rst;
+//    }
 
-    private static void dfsHelper(List<List<Integer>> rst, List<Integer> tmp, int[] candidates, int pos) {
-        rst.add(new ArrayList<Integer>(tmp));
-        if()
-    }
+//    private static void dfsHelper(List<List<Integer>> rst, List<Integer> tmp, int[] candidates, int pos) {
+//        rst.add(new ArrayList<Integer>(tmp));
+//        if()
+//    }
 }
 
 
-public class Solution {
-    public  ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        if (candidates == null) {
-            return result;
-        }
-
-        ArrayList<Integer> path = new ArrayList<Integer>();
-        Arrays.sort(candidates);
-        helper(candidates, target, path, 0, result);
-
-        return result;
-    }
-
-    void helper(int[] candidates, int target, ArrayList<Integer> path, int index,
-                ArrayList<ArrayList<Integer>> result) {
-        if (target == 0) {
-            result.add(new ArrayList<Integer>(path));
-            return;
-        }
-
-        int prev = -1;
-        for (int i = index; i < candidates.length; i++) {
-            if (candidates[i] > target) {
-                break;
-            }
-
-            if (prev != -1 && prev == candidates[i]) {
-                continue;
-            }
-
-            path.add(candidates[i]);
-            helper(candidates, target - candidates[i], path, i, result);
-            path.remove(path.size() - 1);
-
-            prev = candidates[i];
-        }
-    }
-}
+//public class Solution {
+//    public  ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+//        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+//        if (candidates == null) {
+//            return result;
+//        }
+//
+//        ArrayList<Integer> path = new ArrayList<Integer>();
+//        Arrays.sort(candidates);
+//        helper(candidates, target, path, 0, result);
+//
+//        return result;
+//    }
+//
+//    void helper(int[] candidates, int target, ArrayList<Integer> path, int index,
+//                ArrayList<ArrayList<Integer>> result) {
+//        if (target == 0) {
+//            result.add(new ArrayList<Integer>(path));
+//            return;
+//        }
+//
+//        int prev = -1;
+//        for (int i = index; i < candidates.length; i++) {
+//            if (candidates[i] > target) {
+//                break;
+//            }
+//
+//            if (prev != -1 && prev == candidates[i]) {
+//                continue;
+//            }
+//
+//            path.add(candidates[i]);
+//            helper(candidates, target - candidates[i], path, i, result);
+//            path.remove(path.size() - 1);
+//
+//            prev = candidates[i];
+//        }
+//    }
+//}
