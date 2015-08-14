@@ -20,7 +20,27 @@ public class M196FindTheMissingNumber {
      * @param nums: an array of integers
      * @return: an integer
      */
-//    public int findMissing(int[] nums) {
-//        // write your code here
-//    }
+    public static int findMissing(int[] nums) {
+        // write your code here
+        if(nums == null || nums.length == 0) {
+            int maxValue = Integer.MAX_VALUE;
+            return maxValue;
+        }
+        int size = nums.length;
+        int sum = 0;
+        int sum1= 0;
+        for(int i = 0; i < nums.length+1; i++) {
+            sum += i;
+        }
+
+        for(int i = 0; i < nums.length; i++) {
+            sum1 += nums[i];
+        }
+        return sum-sum1;
+    }
+
+    public static void main(String [] args) {
+        int[] a = {0, 1, 3};
+        int b = findMissing(a);
+    }
 }

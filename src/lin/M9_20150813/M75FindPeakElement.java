@@ -31,7 +31,30 @@ public class M75FindPeakElement {
      * @param A: An integers array.
      * @return: return any of peek positions.
      */
-//    public int findPeak(int[] A) {
-//        // write your code here
-//    }
+    public static int findPeak(int[] A) {
+        // write your code here
+        if(A == null || A.length == 0) {
+            return -1;
+        }
+        if(A.length == 1) {
+            return 0;
+        }
+        for(int i = 0; i < A.length-1; i++) {
+            if(i != 0) {
+                if(A[i] >= A[i-1] && A[i] >= A[i+1]) {
+                    return i;
+                }
+            }else {
+                if(A[i] >= A[i+1]){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String [] args) {
+        int[] a = {1, 2, 1, 3, 4, 5, 7, 6};
+        int b = findPeak(a);
+    }
 }

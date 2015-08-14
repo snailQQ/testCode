@@ -1,5 +1,8 @@
 package lin.M9_20150813;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Paul on 8/12/15.
  * http://www.lintcode.com/en/problem/find-the-weak-connected-component-in-the-directed-graph/
@@ -32,6 +35,11 @@ public class M432FindWeakInGraph {
      *     DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
      * };
      */
+    class DirectedGraphNode {
+        int label;
+        ArrayList<DirectedGraphNode> neighbors;
+        DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
+    };
     /**
      * @param nodes a array of Directed graph node
      * @return a connected set of a directed graph

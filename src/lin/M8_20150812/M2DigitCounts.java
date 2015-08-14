@@ -19,7 +19,46 @@ public class M2DigitCounts {
  * param n : As description.
  * return: An integer denote the count of digit k in 1..n
  */
-//    public int digitCounts(int k, int n) {
-//        // write your code here
-//    }
+    public static int digitCounts(int k, int n) {
+        // write your code here
+//        if(n == 0){
+//            n = 10;
+//        }
+//        int factor = 1;
+//        for(int i = 1; i < k; i=i*10){
+//            if(k / i > 10) {
+//                factor++;
+//            }
+//        }
+//        int count = 0;
+//        for(int j = 0; j<= k; j++) {
+//            for(int i = 0; i <= factor; i=i*10) {
+//                if(j%i)
+//            }
+//
+//        }
+//
+//        return count;
+        int count = 0;
+        int base = 1;
+        while (n / base >= 1) {
+            int curBit = n % (base*10) / base;
+            int higher = n / (base*10);
+            int lower = n % base;
+            if (curBit < k) {
+                count += higher * base;
+            }
+            else if (curBit == k) {
+                count += higher * base + lower + 1;
+            } else {
+                count += (higher + 1) * base;
+            }
+            base *= 10;
+        }
+        return count;
+    }
+
+    public static void main(String [] args) {
+        int count = digitCounts(12,1);
+    }
 }
