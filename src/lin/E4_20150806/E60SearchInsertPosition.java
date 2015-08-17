@@ -29,7 +29,45 @@ public class E60SearchInsertPosition {
      * param target :  an integer to be inserted
      * return : an integer
      */
-//    public int searchInsert(int[] A, int target) {
-//        // write your code here
-//    }
+    public static int searchInsert(int[] A, int target) {
+        // write your code here
+        if(A == null || A.length == 0 ){
+            return 0;
+        }
+
+        if(A[0] >= target) {
+            return 0;
+        }
+
+        if(A[A.length-1] < target) {
+            return A.length;
+        }
+        int start = 0;
+        int end = A.length - 1;
+
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if(target <= A[mid]) {
+                end = mid;
+            }else {
+                start = mid;
+            }
+        }
+
+        if(A[start] == target) {
+            return start;
+        }
+        if(A[end] == target) {
+            return end;
+        }
+        if(A[start] != target && A[end] != target) {
+            return start + 1;
+        }
+        return 0;
+    }
+
+    public static void main(String [] args) {
+        int [] a = {1,3,5,6,8,9};
+        searchInsert(a, 7);
+    }
 }
