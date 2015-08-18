@@ -1,0 +1,136 @@
+课程尚未开始
+请大家耐心等待
+关注微信公共账号，获得最新面试题信息及解答
+Facebook: http://www.facebook.
+com/ninechapter
+Weibo:
+http://www.weibo.com/ninechapter
+Binary Tree
+九章算法IT求职面试培训课程 第3章
+www.ninehchapter.com
+Outline
+1. Binary Tree DFS Traversal
+- preorder / inorder / postorder
+- Divide & Conquer
+- Introduce DFS Template
+2. Binary Tree BFS Traversal
+- Introduce BFS template
+3. Binary Search Tree
+Binary Tree DFS Traversal
+Binary Tree Traversal
+Preorder: A BDE C
+Postorder: DEB C A
+inorder: DBE A C
+A
+B C
+D E
+Binary Tree Preorder Traversal
+http://lintcode.com/en/problem/binary-treepreorder-
+traversal/
+http://www.ninechapter.com/solutions/binary-treepreorder-
+traversal/
+Divide & Conquer Algorithm
+- Merge Sort
+- Quick Sort
+- Most of the Binary Tree Problems !
+Maximum Depth of Binary Tree
+http://lintcode.com/en/problem/maximum-depth-ofbinary-
+tree/
+http://www.ninechapter.com/solutions/maximumdepth-
+of-binary-tree/
+Balanced Binary Tree
+http://lintcode.com/en/problem/balanced-binarytree/
+http://www.ninechapter.com/solutions/balancedbinary-
+tree/
+Binary Tree Maximum Path Sum
+http://lintcode.com/en/problem/binary-treemaximum-
+path-sum/
+http://www.ninechapter.com/solutions/binary-treemaximum-
+path-sum/
+Lowest Common Ancestor
+http://lintcode.com/en/problem/lowest-commonancestor/
+http://www.ninechapter.com/solutions/lowestcommon-
+ancestor/
+Binary Tree DFS Template
+http://www.ninechapter.com/solutions/dfs-template/
+5 minutes break
+Binary Tree BFS Traversal
+Binary Tree Level Order Traversal
+http://lintcode.com/en/problem/binary-tree-levelorder-
+traversal/
+http://www.ninechapter.com/solutions/binary-treelevel-
+order-traversal/
+Binary Tree Level Order Traversal
+- 2 Queues
+- 1 Queue + Dummy Node
+- 1 Queue (best)
+- 2 Queues
+- 1 Queue + Dummy Node
+- 1 Queue (best)
+Binary Tree Level Order Traversal
+A #
+A # B C
+A # B C # D E
+A
+B C
+D E
+Binary Tree Level Order
+Traversal II
+http://lintcode.com/en/problem/binary-tree-levelorder-
+traversal-ii/
+http://www.ninechapter.com/solutions/binary-treelevel-
+order-traversal-ii/
+Binary Tree Zigzag Level
+Order Traversal
+http://lintcode.com/en/problem/binary-tree-zigzaglevel-
+order-traversal/
+http://www.ninechapter.com/solutions/binary-treezigzag-
+level-order-traversal/
+Binary Tree BFS Template
+http://www.ninechapter.com/solutions/bfs-template/
+Binary Search Tree
+Validate Binary Search
+Tree
+http://lintcode.com/en/problem/validate-binarysearch-
+tree/
+http://www.ninechapter.com/solutions/validatebinary-
+search-tree/
+Insert a Node in Binary
+Search Tree
+http://lintcode.com/zh-cn/problem/insert-node-in-abinary-
+search-tree/
+http://www.ninechapter.com/solutions/insert-nodein-
+binary-search-tree/
+Search Range in a Binary
+Search Tree
+http://lintcode.com/en/problem/search-range-inbinary-
+search-tree/
+http://www.ninechapter.com/solutions/search-rangein-
+binary-search-tree/
+Implement iterator of
+Binary Search Tree
+http://lintcode.com/en/problem/implement-iteratorof-
+binary-search-tree/
+http://www.ninechapter.com/solutions/implementiterator-
+of-binary-search-tree/
+Remove Node in Binary Search
+Tree
+http://lintcode.com/en/problem/remove-node-inbinary-
+search-tree/
+http://www.ninechapter.com/solutions/remove-nodein-
+binary-search-tree/
+http://www.mathcs.emory.
+edu/~cheung/Courses/171/Syllabus/9-BinTree/BSTdelete.
+Remove Node in Binary Search Tree
+Steps:
+1. Find the node
+2. Find the maximum node in the left
+subtree
+3. Replace the node with the maximum
+node in the left subtree.
+Remove Node in Binary Search Tree
+Special Cases:
+1. The node doest have a left child.
+2. The maximum node in the left subtree
+has a left child.
+3. The node is the root of the tree.
