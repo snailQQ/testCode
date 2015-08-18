@@ -1,5 +1,7 @@
 package lin.M11_20150816;
 
+import java.util.ArrayList;
+
 /**
  * Created by Paul on 8/16/15.
  * http://www.lintcode.com/en/problem/interval-sum/
@@ -7,7 +9,9 @@ package lin.M11_20150816;
 //Interval Sum
 //
 //        24% Accepted
-//        Given an integer array (index from 0 to n-1, where n is the size of this array), and an query list. Each query has two integers [start, end]. For each query, calculate the sum number between index start and end in the given array, return the result list.
+//        Given an integer array (index from 0 to n-1, where n is the size of this array), and an query list.
+// Each query has two integers [start, end].
+// For each query, calculate the sum number between index start and end in the given array, return the result list.
 //
 //        Have you met this question in a real interview? Yes
 //        Example
@@ -28,12 +32,34 @@ public class M206IntervalSum {
      *         this.end = end;
      *     }
      */
+    public class Interval {
+        int start, end;
+
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
     /**
      *@param A, queries: Given an integer array and an query list
      *@return: The result list
      */
-//    public ArrayList<Long> intervalSum(int[] A,
-//                                       ArrayList<Interval> queries) {
-//        // write your code here
-//    }
+    public ArrayList<Long> intervalSum(int[] A,
+                                       ArrayList<Interval> queries) {
+        // write your code here
+        ArrayList<Long> returnValue = new ArrayList<Long>();
+        if(queries.size() == 0 || queries == null) {
+            return returnValue;
+        }
+        for(Interval element : queries) {
+            int start = element.start;
+            int end = element.end;
+            long sum = 0;
+            for(int i = start; i <= end; i++) {
+                sum += A[i];
+            }
+            returnValue.add(sum);
+        }
+        return returnValue;
+    }
 }

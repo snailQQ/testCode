@@ -3,6 +3,7 @@ package lin.M11_20150816;
 /**
  * Created by Paul on 8/16/15.
  * http://www.lintcode.com/en/problem/largest-number/
+ * http://blog.csdn.net/u013027996/article/details/42773431
  */
 //Largest Number
 //

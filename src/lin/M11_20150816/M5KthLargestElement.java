@@ -1,5 +1,8 @@
 package lin.M11_20150816;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Created by Paul on 8/16/15.
  * http://www.lintcode.com/en/problem/kth-largest-element/
@@ -24,7 +27,20 @@ public class M5KthLargestElement {
     //param k : description of k
     //param numbers : array of numbers
     //return: description of return
-//    public int kthLargestElement(int k, ArrayList<Integer> numbers) {
-//        // write your code here
-//    }
+    public int kthLargestElement(int k, ArrayList<Integer> numbers) {
+        // write your code here
+        if(numbers == null || numbers.size() == 0) {
+            return Integer.MIN_VALUE;
+        }
+        if(k > numbers.size()){
+            return Integer.MIN_VALUE;
+        }
+        Collections.sort(numbers);
+        for(int i = numbers.size() - 1; i >= 0; i--) {
+            if(i + k == numbers.size()) {
+                return numbers.get(i);
+            }
+        }
+        return Integer.MIN_VALUE;
+    }
 }

@@ -132,7 +132,7 @@ Binary Search Easy
 13 % Kth Smallest Number in Sorted Matrix Medium
 17 % Largest Number Medium
 47 % Linked List Cycle Medium
-29 % Longest Common Prefix Medium-------------------------------15
+29 % Longest Common Prefix Medium-------------------------------16
 36 % Longest Common Subsequence Medium
 31 % Longest Common Substring Medium
 32 % Longest Consecutive Sequence Medium
@@ -142,7 +142,7 @@ Binary Search Easy
 26 % Longest Substring Without Repeating Characters Medium
 33 % Lowest Common Ancestor Medium
 25 % Majority Number II Medium
-25 % Majority Number III Medium-------------------------------16
+25 % Majority Number III Medium-------------------------------17
 12 % Max Points on a Line Medium
 24 % Maximal Square Medium
 28 % Maximum Product Subarray Medium
@@ -152,7 +152,7 @@ Binary Search Easy
 29 % Min Stack Medium
 27 % Minimum Adjustment Cost Medium
 21 % Minimum Size Subarray Sum Medium
-20 % Minimum Window Substring Medium-------------------------------17
+20 % Minimum Window Substring Medium-------------------------------18
 21 % N-Queens Medium
 39 % N-Queens II Medium
 23 % Next Permutation Medium
@@ -162,7 +162,7 @@ Binary Search Easy
 20 % Palindrome Partitioning II Medium
 25 % Partition Array Medium
 19 % Permutation Index II Medium
-25 % Permutation Sequence Medium-------------------------------18
+25 % Permutation Sequence Medium-------------------------------19
 24 % Permutations Medium
 23 % Permutations II Medium
 28 % Previous Permuation Medium
@@ -172,7 +172,7 @@ Binary Search Easy
 23 % Reorder List Medium
 29 % Reverse Linked List II Medium
 42 % Roman to Integer Medium
-34 % Rotate Image Medium-------------------------------19
+34 % Rotate Image Medium-------------------------------20
 27 % Rotate List Medium
 38 % Route Between Two Nodes in Graph Medium
 30 % Search a 2D Matrix II Medium
@@ -182,7 +182,7 @@ Binary Search Easy
 36 % Search Range in Binary Search Tree Medium
 34 % Segment Tree Build Medium
 35 % Segment Tree Modify Medium
-34 % Segment Tree Query Medium-------------------------------20
+34 % Segment Tree Query Medium-------------------------------21
 27 % Segment Tree Query II Medium
 32 % Set Matrix Zeroes Medium
 21 % Simplify Path Medium
@@ -192,7 +192,7 @@ Binary Search Easy
 32 % Sort Colors II Medium
 38 % Sort Letters by Case Medium
 27 % Sort List Medium
-15 % Subarray Sum Closest Medium-------------------------------21
+15 % Subarray Sum Closest Medium-------------------------------22
 15 % Submatrix Sum Medium
 22 % Subsets Medium
 24 % Subsets II Medium
@@ -202,7 +202,7 @@ Binary Search Easy
 20 % Ugly Number Medium
 32 % Unique Binary Search Trees Medium
 30 % Unique Binary Search Trees II Medium
-17 % Update Bits Medium-------------------------------22
+17 % Update Bits Medium-------------------------------23
 23 % Validate Binary Search Tree Medium
 20 % Wood Cut Medium
 11 % Word Break Medium
@@ -212,7 +212,7 @@ Binary Search Easy
 17 % Binary Representation Hard
 31 % Binary Search Tree Iterator Hard
 10 % Building Outline Hard
-32 % Candy Hard-------------------------------23
+32 % Candy Hard-------------------------------24
 29 % Coins in a Line III Hard
 23 % Convert Expression to Polish Notation Hard
 25 % Convert Expression to Reverse Polish Notation Hard
@@ -222,7 +222,7 @@ Binary Search Easy
 21 % Expression Evaluation Hard
 17 % Expression Tree Build Hard
 32 % Find Peak Element II Hard
-24 % Interval Sum II Hard-------------------------------24
+24 % Interval Sum II Hard-------------------------------25
 19 % k Sum Hard
 24 % Largest Rectangle in Histogram Hard
 36 % Linked List Cycle II Hard
@@ -232,7 +232,7 @@ Binary Search Easy
 24 % Maximum Gap Hard
 21 % Maximum Subarray III Hard
 20 % Median of two Sorted Arrays Hard
-9 % Number of Islands II Hard-------------------------------25
+9 % Number of Islands II Hard-------------------------------26
 22 % Post Office Problem Hard
 25 % Regular Expression Matching Hard
 25 % Remove Node in Binary Search Tree Hard
@@ -242,7 +242,7 @@ Binary Search Easy
 15 % String to Integer(atoi) Hard
 29 % Subarray Sum II Hard
 17 % Trapping Rain Water II Hard
-30 % Triangle Count Hard-------------------------------26
+30 % Triangle Count Hard-------------------------------27
 30 % Valid Number Hard
 28 % Wildcard Matching Hard
 14 % Word Ladder II Hard
