@@ -182,17 +182,17 @@ Binary Search Easy
 36 % Search Range in Binary Search Tree Medium
 34 % Segment Tree Build Medium
 35 % Segment Tree Modify Medium
-34 % Segment Tree Query Medium-------------------------------21
+34 % Segment Tree Query Medium
 27 % Segment Tree Query II Medium
 32 % Set Matrix Zeroes Medium
 21 % Simplify Path Medium
 39 % Single Number II Medium
-33 % Single Number III Medium
+33 % Single Number III Medium-------------------------------21
 33 % Sort Colors Medium
 32 % Sort Colors II Medium
 38 % Sort Letters by Case Medium
 27 % Sort List Medium
-15 % Subarray Sum Closest Medium-------------------------------22
+15 % Subarray Sum Closest Medium
 15 % Submatrix Sum Medium
 22 % Subsets Medium
 24 % Subsets II Medium
@@ -202,7 +202,7 @@ Binary Search Easy
 20 % Ugly Number Medium
 32 % Unique Binary Search Trees Medium
 30 % Unique Binary Search Trees II Medium
-17 % Update Bits Medium-------------------------------23
+17 % Update Bits Medium-------------------------------22
 23 % Validate Binary Search Tree Medium
 20 % Wood Cut Medium
 11 % Word Break Medium
