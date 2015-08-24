@@ -1,4 +1,4 @@
-package jiuzhang1;
+package jz1;
 
 /**
  * Created by Paul on 8/5/15.

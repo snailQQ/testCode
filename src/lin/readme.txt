@@ -212,7 +212,7 @@ Binary Search Easy
 17 % Binary Representation Hard
 31 % Binary Search Tree Iterator Hard
 10 % Building Outline Hard
-32 % Candy Hard-------------------------------24
+32 % Candy Hard-------------------------------23
 29 % Coins in a Line III Hard
 23 % Convert Expression to Polish Notation Hard
 25 % Convert Expression to Reverse Polish Notation Hard
@@ -222,7 +222,7 @@ Binary Search Easy
 21 % Expression Evaluation Hard
 17 % Expression Tree Build Hard
 32 % Find Peak Element II Hard
-24 % Interval Sum II Hard-------------------------------25
+24 % Interval Sum II Hard-------------------------------24
 19 % k Sum Hard
 24 % Largest Rectangle in Histogram Hard
 36 % Linked List Cycle II Hard
@@ -232,7 +232,7 @@ Binary Search Easy
 24 % Maximum Gap Hard
 21 % Maximum Subarray III Hard
 20 % Median of two Sorted Arrays Hard
-9 % Number of Islands II Hard-------------------------------26
+9 % Number of Islands II Hard-------------------------------25
 22 % Post Office Problem Hard
 25 % Regular Expression Matching Hard
 25 % Remove Node in Binary Search Tree Hard
@@ -242,7 +242,7 @@ Binary Search Easy
 15 % String to Integer(atoi) Hard
 29 % Subarray Sum II Hard
 17 % Trapping Rain Water II Hard
-30 % Triangle Count Hard-------------------------------27
+30 % Triangle Count Hard-------------------------------26
 30 % Valid Number Hard
 28 % Wildcard Matching Hard
 14 % Word Ladder II Hard

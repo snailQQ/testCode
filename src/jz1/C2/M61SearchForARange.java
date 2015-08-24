@@ -1,4 +1,4 @@
-package jiuzhang1.C2;
+package jz1.C2;
 
 import java.util.ArrayList;
 

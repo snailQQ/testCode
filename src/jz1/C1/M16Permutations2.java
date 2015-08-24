@@ -1,7 +1,6 @@
-package jiuzhang1.C1;
+package jz1.C1;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**

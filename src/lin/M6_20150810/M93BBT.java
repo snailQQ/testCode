@@ -22,12 +22,42 @@ package lin.M6_20150810;
 //        15   7              15  7
 //        The binary tree A is a height-balanced binary tree, but B is not.
 public class M93BBT {
+    public class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+    }
+
+    public int checkBalanced(TreeNode t){
+        if(t==null)
+            return 0;
+
+        int leftheight = checkBalanced(t.left);
+        if(leftheight == -1)
+            return -1;
+
+        int rightheight = checkBalanced(t.right);
+        if(rightheight == -1)
+            return -1;
+
+        if(Math.abs(leftheight-rightheight)>1)
+            return -1;
+        else
+            return Math.max(leftheight,rightheight)+1;
+    }
 
     /**
      * @param root: The root of binary tree.
      * @return: True if this Binary tree is Balanced, or false.
      */
-//    public boolean isBalanced(TreeNode root) {
-//        // write your code here
-//    }
+    public boolean isBalanced(TreeNode root) {
+        // write your code here
+        if(checkBalanced(root) == -1)
+            return false;
+        else
+            return true;
+    }
 }

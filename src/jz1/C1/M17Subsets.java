@@ -1,8 +1,7 @@
-package jiuzhang1.C1;
+package jz1.C1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Created by Paul on 8/8/15.
@@ -177,3 +176,6 @@ public class M17Subsets {
         ArrayList<ArrayList<Integer>> a = subsets(nums);
     }
 }
+
+
+
