@@ -1,4 +1,4 @@
-package lin;
+package lin.E1_20150803;
 
 /**
  * Created by Paul on 8/2/15.
@@ -50,22 +50,35 @@ public class E67BinaryTreeInorderTraversal {
      * @param root: The root of binary tree.
      * @return: Inorder in ArrayList which contains node values.
      */
-    public ArrayList<Integer> inorderTraversal(TreeNode root) {
+//    public ArrayList<Integer> inorderTraversal(TreeNode root) {
         // write your code here
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        if(root == null)
-            return res;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while(root!=null || !stack.isEmpty()){
-            if(root!=null){
-                stack.push(root);
-                root = root.left;
-            }else{
-                root = stack.pop();
-                res.add(root.val);
-                root = root.right;
-            }
-        }
-        return res;
-    }
+//        ArrayList<Integer> rst = new ArrayList<Integer>();
+//        if(root == null) {
+//            return rst;
+//        }
+//        Stack<TreeNode> aStack = new Stack<TreeNode>();
+//        aStack.push(root);
+//        while(!aStack.isEmpty()) {
+//            TreeNode aNode = aStack.peek();
+//            if(aNode.left != null) {
+//                aStack.push(aNode.left);
+//            }
+//            if()
+//        }
+//        ArrayList<Integer> res = new ArrayList<Integer>();
+//        if(root == null)
+//            return res;
+//        Stack<TreeNode> stack = new Stack<TreeNode>();
+//        while(root!=null || !stack.isEmpty()){
+//            if(root!=null){
+//                stack.push(root);
+//                root = root.left;
+//            }else{
+//                root = stack.pop();
+//                res.add(root.val);
+//                root = root.right;
+//            }
+//        }
+//        return res;
+//    }
 }
