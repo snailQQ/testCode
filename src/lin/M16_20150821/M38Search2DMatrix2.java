@@ -41,7 +41,23 @@ public class M38Search2DMatrix2 {
      * @param: A number you want to search in the matrix
      * @return: An integer indicate the occurrence of target in the given matrix
      */
-//    public int searchMatrix(int[][] matrix, int target) {
-//        // write your code here
-//    }
+    public int searchMatrix(int[][] matrix, int target) {
+        // write your code here
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+           return Integer.MIN_VALUE;
+        }
+
+        int row = matrix.length;
+        int column = matrix[0].length;
+
+        int start = 0;
+        int end = row * column - 1;
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if(matrix[mid/column][mid%column] == target) {
+                return true;
+            }
+        }
+
+    }
 }

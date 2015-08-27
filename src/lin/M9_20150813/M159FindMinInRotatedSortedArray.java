@@ -54,5 +54,6 @@ public class M159FindMinInRotatedSortedArray {
         min = Math.min(num[r],min);
         min = Math.min(num[l],min);
         return min;
+
     }
 }
