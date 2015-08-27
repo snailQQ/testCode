@@ -65,6 +65,12 @@ public class M202SegmentTreeQuery {
             return Integer.MIN_VALUE;
         }
 
+        if(root.start >= start && root.end >= end) {
+            return root.max;
+        }
+
+
+
         SegmentTreeNode node = helper(root, start, end);
         return node.max;
     }

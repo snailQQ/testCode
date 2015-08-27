@@ -3,6 +3,8 @@ package lin.E4_20150806;
 /**
  * Created by Paul on 8/5/15.
  * http://www.lintcode.com/en/problem/search-a-2d-matrix/
+ * http://www.cnblogs.com/springfor/p/3857959.html
+ * http://www.jiuzhang.com/solutions/search-a-2d-matrix/
  */
 //Search a 2D Matrix
 //

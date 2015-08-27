@@ -3,6 +3,7 @@ package lin.E4_20150806;
 /**
  * Created by Paul on 8/5/15.
  * http://www.lintcode.com/en/problem/sqrtx/
+ * http://www.cnblogs.com/yuzhangcmu/p/4198959.html
  */
 //Sqrt(x)
 //
@@ -28,8 +29,29 @@ public class E141Sqrt {
      * @param x: An integer
      * @return: The sqrt of x
      */
-//    public int sqrt(int x) {
-//        // write your code here
-//    }
+    public static int sqrt(int x) {
+        // write your code here
+        long left = 0;
+        long right = x;
+
+        while(left < right) {
+            long mid = left + (right - left) / 2;
+            if(mid * mid == x) {
+                return (int)mid;
+            } else if(mid * mid > x) {
+                right = mid - 1;
+            }else {
+                left = mid + 1;
+            }
+        }
+        return (int)right;
+    }
+
+    public static void main(String [] args) {
+//        int a = sqrt(90);
+       int a = sqrt(80);
+        a = sqrt(82);
+
+    }
 
 }

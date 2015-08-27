@@ -1,5 +1,7 @@
 package lin.M6_20150810;
 
+import java.util.ArrayList;
+
 /**
  * Created by Paul on 8/9/15.
  * http://www.lintcode.com/en/problem/balanced-binary-tree/
@@ -22,7 +24,7 @@ package lin.M6_20150810;
 //        15   7              15  7
 //        The binary tree A is a height-balanced binary tree, but B is not.
 public class M93BBT {
-    public class TreeNode {
+    public static class TreeNode {
         public int val;
         public TreeNode left, right;
         public TreeNode(int val) {
@@ -31,7 +33,7 @@ public class M93BBT {
         }
     }
 
-    public int checkBalanced(TreeNode t){
+    public static int checkBalanced(TreeNode t){
         if(t==null)
             return 0;
 
@@ -53,11 +55,28 @@ public class M93BBT {
      * @param root: The root of binary tree.
      * @return: True if this Binary tree is Balanced, or false.
      */
-    public boolean isBalanced(TreeNode root) {
+    public static boolean isBalanced(TreeNode root) {
         // write your code here
         if(checkBalanced(root) == -1)
             return false;
         else
             return true;
+    }
+
+    public static void main(String [] args) {
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
+        TreeNode f = new TreeNode(6);
+        TreeNode g = new TreeNode(7);
+        e.left = f;
+        e.right = g;
+        b.left = c;
+        b.right = d;
+        a.left = b;
+        a.right = e;
+        boolean ss = isBalanced(a);
     }
 }
