@@ -44,12 +44,41 @@ public class M202SegmentTreeQuery {
      *     }
      * }
      */
+    public class SegmentTreeNode {
+        public int start, end, max;
+        public SegmentTreeNode left, right;
+        public SegmentTreeNode(int start, int end, int max) {
+            this.start = start;
+            this.end = end;
+            this.max = max;
+            this.left = this.right = null;
+        }
+    }
     /**
      *@param root, start, end: The root of segment tree and
      *                         an segment / interval
      *@return: The maximum number in the interval [start, end]
      */
-//    public int query(SegmentTreeNode root, int start, int end) {
-//        // write your code here
-//    }
+    public int query(SegmentTreeNode root, int start, int end) {
+        // write your code here
+        if(root == null || start > end) {
+            return Integer.MIN_VALUE;
+        }
+
+        SegmentTreeNode node = helper(root, start, end);
+        return node.max;
+    }
+
+    private SegmentTreeNode helper(SegmentTreeNode root, int start, int end) {
+        if(root.start == start && root.end == end) {
+            return root;
+        }
+        int mid = root.start + (root.end - root.start) / 2;
+        if(start > mid) {
+            helper(root.right, start, end);
+        }else {
+            helper(root.left, start, end);
+        }
+        return null;
+    }
 }

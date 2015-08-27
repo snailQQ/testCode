@@ -1,7 +1,5 @@
 package lin.M7_20150811;
 
-import lin.E66BinaryTreePerorderT;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
