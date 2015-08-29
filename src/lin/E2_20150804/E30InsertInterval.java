@@ -37,28 +37,26 @@ public class E30InsertInterval {
      * @return: A new sorted interval list.
      */
     public static ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
-        if (newInterval == null || intervals == null) {
-            return intervals;
+        ArrayList<Interval> result = new ArrayList<Interval>();
+        // write your code here
+        if(intervals == null || newInterval == null) {
+            return result;
         }
-
-        ArrayList<Interval> results = new ArrayList<Interval>();
-        int insertPos = 0;
-
-        for (Interval interval : intervals) {
-            if (interval.end < newInterval.start) {
-                results.add(interval);
-                insertPos++;
-            } else if (interval.start > newInterval.end) {
-                results.add(interval);
-            } else {
-                newInterval.start = Math.min(interval.start, newInterval.start);
-                newInterval.end = Math.max(interval.end, newInterval.end);
+        for(Interval interval : intervals) {
+            if(interval.end < newInterval.start) {
+                result.add(interval);
+            }else if(interval.start > newInterval.end) {
+                result.add(newInterval);
+                newInterval = interval;
+            }else if(interval.start <= newInterval.end || interval.end >= newInterval.start) {
+                int left = Math.min(interval.start, newInterval.start);
+                int right = Math.max(interval.end, newInterval.end);
+                newInterval = new Interval(left, right);
             }
         }
 
-        results.add(insertPos, newInterval);
-
-        return results;
+        result.add(newInterval);
+        return result;
     }
 
     public static void main(String [] args) {
