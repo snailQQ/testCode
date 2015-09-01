@@ -26,5 +26,10 @@ public class E64MergeSortedArray {
      */
     public void mergeSortedArray(int[] A, int m, int[] B, int n) {
         // write your code here
+        if(A == null && B == null) {
+            return;
+        }
+
+
     }
 }

@@ -29,6 +29,11 @@ package lin.M10_20150814;
 //
 //        Challenge
 //        You should call isBadVersion as few as possible.
+class VersionControl {
+    public static boolean isBadVersion(int k) {
+        return false;
+    }
+}
 public class M74FirstBadVersion {
     /**
      * public class VersionControl {
@@ -41,7 +46,26 @@ public class M74FirstBadVersion {
      * @param n: An integers.
      * @return: An integer which is the first bad version.
      */
-//    public int findFirstBadVersion(int n) {
-//        // write your code here
-//    }
+    public int findFirstBadVersion(int n) {
+        // write your code here
+        if(n < 1) {
+            return Integer.MIN_VALUE;
+        }
+        int start = 1;
+        int end = n;
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if(VersionControl.isBadVersion(mid) == true) {
+                end = mid;
+            }else{
+                start = mid;
+            }
+        }
+
+        if(VersionControl.isBadVersion(start) == true) {
+            return start;
+        }else {
+            return end;
+        }
+    }
 }

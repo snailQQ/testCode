@@ -57,3 +57,11 @@ public class E80Median {
         }
     }
 }
+
+
+//if(nums == null || nums.length == 0) {
+//        return Integer.MIN_VALUE;
+//        }
+//
+//        Arrays.sort(nums);
+//        return nums[(nums.length - 1) / 2];

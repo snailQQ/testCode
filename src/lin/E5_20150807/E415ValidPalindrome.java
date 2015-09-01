@@ -1,5 +1,7 @@
 package lin.E5_20150807;
 
+import java.util.Stack;
+
 /**
  * Created by Paul on 8/6/15.
  * http://www.lintcode.com/en/problem/valid-palindrome/
@@ -30,7 +32,45 @@ public class E415ValidPalindrome {
      * @param s A string
      * @return Whether the string is a valid palindrome
      */
-//    public boolean isPalindrome(String s) {
-//        // Write your code here
-//    }
+    public static boolean isPalindrome(String s) {
+        // Write your code here
+        if(s == null) {
+            return false;
+        }
+        if(s.length() <= 1) {
+            return true;
+        }
+        s = s.toUpperCase();
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        while(left <= right) {
+            if(isValid(s.charAt(left)) && isValid(s.charAt(right))) {
+                if(s.charAt(left) != s.charAt(right)) {
+                    return false;
+                }else {
+                    left++;
+                    right--;
+                }
+            } else if(!isValid(s.charAt(left))) {
+                left++;
+            } else if(!isValid(s.charAt(right))) {
+                right--;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isValid(char c) {
+        if((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String [] args) {
+        boolean a = isPalindrome("ab");
+    }
 }

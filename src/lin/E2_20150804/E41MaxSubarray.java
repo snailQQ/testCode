@@ -3,6 +3,7 @@ package lin.E2_20150804;
 /**
  * Created by Paul on 8/3/15.
  * http://www.lintcode.com/en/problem/maximum-subarray/
+ * http://www.cnblogs.com/springfor/p/3877058.html
  */
 
 //Maximum Subarray

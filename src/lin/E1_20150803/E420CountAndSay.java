@@ -1,4 +1,6 @@
+
 package lin.E1_20150803;
+
 
 /**
  * Created by Paul on 8/2/15.
@@ -27,6 +29,7 @@ public class E420CountAndSay {
      * @param n the nth
      * @return the nth sequence
      */
+
     public static String countAndSay(int n) {
         // Write your code here
         String initString = "1";
@@ -56,4 +59,19 @@ public class E420CountAndSay {
     public static void main(String [] args) {
         String a = countAndSay(3);
     }
+
+//    public String countAndSay(int n) {
+//        // Write your code here
+//        String aString = "";
+//        for(int i = 1; i <= n; i++) {
+//            if(i == 1) {
+//                aString = "11";
+//            }else {
+//                for(int j = 0; j < aString.length(); j++) {
+//                    if
+//                }
+//            }
+//        }
+//    }
+
 }

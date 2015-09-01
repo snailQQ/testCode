@@ -25,19 +25,43 @@ public class E397LongestIncreasing {
      * @param A an array of Integer
      * @return  an integer
      */
-//    public int longestIncreasingContinuousSubsequence(int[] A) {
-//        // Write your code here
-//        int max = 0;
-//        if(A == null) {
-//            return 0;
-//        }
-//        if(A.length == 1){
-//            return 1;
-//        } else {
-//            for(int i = 1; i < A.length; i++) {
-//                if()
-//            }
-//        }
+    public static int longestIncreasingContinuousSubsequence(int[] A) {
+        // Write your code here
+        if(A == null || A.length == 0) {
+            return 0;
+        }
+
+        if(A.length == 1) {
+            return 1;
+        }
+
+        if(A.length == 2 ) {
+            if(A[0] == A[1]) {
+                return 1;
+            }else {
+                return 2;
+            }
+
+        }
+
+        int count = 1;
+        int max = 0;
+        for(int i = 1; i < A.length - 1; i++) {
+            if(count < 2 && ((A[i] > A[i-1] && A[i] > A[i+1]) || (A[i] < A[i-1] && A[i] < A[i+1]))) {
+                if( max < count + 1) {
+                    max = count + 1;
+                }
+                count = 1;
+            }else{
+                count++;
+            }
+        }
+        return Math.max(max, count);
 //        https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
-//    }
+    }
+
+    public static void main(String [] args) {
+        int [] array = {5,1,2,3,4};
+        int a = longestIncreasingContinuousSubsequence(array);
+    }
 }

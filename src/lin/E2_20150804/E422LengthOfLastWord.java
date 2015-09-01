@@ -3,6 +3,7 @@ package lin.E2_20150804;
 /**
  * Created by Paul on 8/3/15.
  * http://www.lintcode.com/en/problem/length-of-last-word/
+ * http://www.cnblogs.com/springfor/p/3872326.html
  */
 //Length of Last Word
 //
@@ -20,8 +21,27 @@ public class E422LengthOfLastWord {
      * @param s A string
      * @return the length of last word
      */
-//    public int lengthOfLastWord(String s) {
-//        // Write your code here
-////        http://www.cnblogs.com/springfor/p/3872326.html
-//    }
+    public static int lengthOfLastWord(String s) {
+        // Write your code here
+        if(s.isEmpty() || s.length() == 0) {
+            return 0;
+        }
+        int count = 0;
+
+        for(int i = s.length() - 1; i >= 0; i--) {
+            if(s.charAt(i) != ' ') {
+                count++;
+
+            }else if(s.charAt(i) == ' ' && count != 0){
+                return count;
+            }
+        }
+
+        return count;
+//
+    }
+
+    public static void main(String [] args) {
+        int a = lengthOfLastWord("Today is a nice day");
+    }
 }

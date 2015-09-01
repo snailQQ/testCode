@@ -30,19 +30,39 @@ package lin.E5_20150807;
 //        A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is,
 //        if you cut off the tree at node n, the two trees would be identical.
 public class E245Subtree {
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int val) {
+    public static class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        TreeNode(int val) {
             this.val = val;
-            this.next = null;
+            this.left = this.right = null;
         }
     }
     /**
      * @param T1, T2: The roots of binary tree.
      * @return: True if T2 is a subtree of T1, or false.
      */
-//    public boolean isSubtree(TreeNode T1, TreeNode T2) {
-//        // write your code here
-//    }
+    public boolean isSubtree(TreeNode T1, TreeNode T2) {
+        // write your code here
+        if(T2 == null) {
+            return true;
+        } else if(T1 == null) {
+            return false;
+        } else {
+            return isSame(T1, T2) || isSubtree(T1.left, T2) || isSubtree(T1.right, T2);
+        }
+    }
+
+    public boolean isSame(TreeNode T1, TreeNode T2) {
+        if(T1 == null && T2 == null) {
+            return true;
+        }
+        if(T1 == null || T2 == null) {
+            return false;
+        }
+        if(T1.val != T2.val) {
+            return false;
+        }
+        return isSame(T1.left, T2.left) && isSame(T1.right, T2.right);
+    }
 }

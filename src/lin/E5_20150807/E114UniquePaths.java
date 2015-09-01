@@ -2,8 +2,11 @@ package lin.E5_20150807;
 
 /**
  * Created by Paul on 8/6/15.
+ * //http://www.lintcode.com/en/problem/unique-paths/
+ //http://www.cnblogs.com/springfor/p/3886603.html
  */
 //http://www.lintcode.com/en/problem/unique-paths/
+//http://www.cnblogs.com/springfor/p/3886603.html
 //Unique Paths
 //
 //        38% Accepted
@@ -46,7 +49,23 @@ public class E114UniquePaths {
      * @param n, m: positive integer (1 <= n ,m <= 100)
      * @return an integer
      */
-//    public int uniquePaths(int m, int n) {
-//        // write your code here
-//    }
+    public int uniquePaths(int m, int n) {
+        // write your code here
+        int[][] anArray = new int[m][n];
+        for(int i = 0; i < m; i++) {
+            anArray[i][0] = 1;
+        }
+        for(int i = 0; i < n; i++) {
+            anArray[0][i] = 1;
+        }
+
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
+                anArray[i][j] = anArray[i-1][j] + anArray[i][j-1];
+            }
+        }
+
+        return anArray[m-1][n-1];
+
+    }
 }

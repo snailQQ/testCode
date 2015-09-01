@@ -3,6 +3,7 @@ package lin.E4_20150806;
 /**
  * Created by Paul on 8/5/15.
  * http://www.lintcode.com/en/problem/remove-nth-node-from-end-of-list/
+ * http://www.cnblogs.com/springfor/p/3862219.html
  */
 //Remove Nth Node From End of List
 //
@@ -35,7 +36,27 @@ public class E174RemoveNthFromEndOfList {
      * @param n: An integer.
      * @return: The head of linked list.
      */
-//    ListNode removeNthFromEnd(ListNode head, int n) {
-//        // write your code here
-//    }
+    ListNode removeNthFromEnd(ListNode head, int n) {
+        // write your code here
+        if (n <= 0) {
+            return null;
+        }
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode slower = dummy;
+        for (int i = 0; i < n; i++) {
+            if (head == null) {
+                return null;
+            }
+            head = head.next;
+        }
+        while (head != null) {
+            head = head.next;
+            slower = slower.next;
+        }
+        slower.next = slower.next.next;
+        return dummy.next;
+    }
 }

@@ -33,7 +33,25 @@ public class M76LongestIncreasingSubseq {
      * @param nums: The integer array
      * @return: The length of LIS (longest increasing subsequence)
      */
-//    public int longestIncreasingSubsequence(int[] nums) {
-//        // write your code here
-//    }
+    public int longestIncreasingSubsequence(int[] nums) {
+        // write your code here
+        if(nums == null || nums.length == 0) {
+            return 0;
+        }
+        int[] count = new int[nums.length];
+        int max = 0;
+        for(int i = 0; i < nums.length; i++) {
+            count[i] = 1;
+            for(int j = 0; j < i; j++) {
+                if(nums[j] <= nums[i]) {
+                    count[i] = count[i] > count[j] ? count[i] : count[j] + 1;
+                }
+            }
+            if(count[i] > max) {
+                max = count[i];
+            }
+        }
+        return max;
+        
+    }
 }

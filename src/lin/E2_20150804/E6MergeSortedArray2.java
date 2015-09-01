@@ -1,5 +1,8 @@
 package lin.E2_20150804;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Created by Paul on 8/3/15.
  * http://www.lintcode.com/en/problem/merge-sorted-array-ii/
@@ -24,7 +27,12 @@ public class E6MergeSortedArray2 {
      * @param A and B: sorted integer array A and B.
      * @return: A new sorted integer array
      */
-//    public ArrayList<Integer> mergeSortedArray(ArrayList<Integer> A, ArrayList<Integer> B) {
-//        // write your code here
-//    }
+    public ArrayList<Integer> mergeSortedArray(ArrayList<Integer> A, ArrayList<Integer> B) {
+        // write your code here
+        for(Integer element: B) {
+            A.add(element);
+        }
+        Collections.sort(A);
+        return A;
+    }
 }

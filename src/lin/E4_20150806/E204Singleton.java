@@ -25,7 +25,12 @@ public class E204Singleton {
     /**
      * @return: The same instance of this class every time
      */
-//    public static Solution getInstance() {
-//        // write your code here
-//    }
+    private static E204Singleton ins = null;
+    public static E204Singleton getInstance() {
+        // write your code here
+        if (ins == null) {
+            ins = new E204Singleton();
+        }
+        return ins;
+    }
 }

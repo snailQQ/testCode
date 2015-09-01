@@ -3,6 +3,7 @@ package lin.E5_20150807;
 /**
  * Created by Paul on 8/6/15.
  * http://www.lintcode.com/en/problem/trailing-zeros/
+ * http://www.danielbit.com/blog/puzzle/leetcode/leetcode-factorial-trailing-zeroes
  */
 //Trailing Zeros
 //
@@ -45,7 +46,7 @@ public class E2TrailingZeros {
     }
 
     public static void main(String [] args) {
-        long a = 26;
+        long a = 30;
         long b = trailingZeros(a);
     }
 }

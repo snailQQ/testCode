@@ -1,9 +1,9 @@
-//package lin;
-//
-///**
-// * Created by Paul on 8/2/15.
-// * http://www.lintcode.com/en/problem/hash-function/
-// */
+package lin.E1_20150803;
+
+/**
+ * Created by Paul on 8/2/15.
+ * http://www.lintcode.com/en/problem/hash-function/
+ */
 //Hash Function
 //
 //        15% Accepted
@@ -27,16 +27,33 @@
 //
 //        Clarification
 //        For this problem, you are not necessary to design your own hash algorithm or consider any collision issue, you just need to implement the algorithm as described.
-//
-//
-//public class E128HashFunction {
-//
-//    /**
-//     * @param key: A String you should hash
-//     * @param HASH_SIZE: An integer
-//     * @return an integer
-//     */
-//    public int hashCode(char[] key,int HASH_SIZE) {
-//        // write your code here
-//    }
-//}
+
+
+public class E128HashFunction {
+
+    /**
+     * @param key: A String you should hash
+     * @param HASH_SIZE: An integer
+     * @return an integer
+     */
+    public static int hashCode(char[] key,int HASH_SIZE) {
+        // write your code here
+        if(key == null || key.length == 0 || HASH_SIZE == 0) {
+            return Integer.MIN_VALUE;
+        }
+
+        long res = 0;
+        for (int i = 0; i < key.length; i++){
+            res = 33 * res + (int)key[i];
+            res = res % HASH_SIZE;
+        }
+        return (int)res;
+
+    }
+
+    public static void main(String [] args) {
+//        char[] b = {'a','b','c','d'};
+        char[] b = {'u','b','u','n','t','u'};
+        int a = hashCode(b, 1007);
+    }
+}

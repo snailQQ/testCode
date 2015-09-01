@@ -25,7 +25,23 @@ public class E8RotateString {
     * param offset: Rotate string with offset.
             * return: Rotated string.
             */
-//    public char[] rotateString(char[] A, int offset) {
-//        // wirte your code here
-//    }
+    public char[] rotateString(char[] str, int offset) {
+        // wirte your code here
+        if(str == null || str.length == 0) {
+            return str;
+        }
+
+        int length = str.length;
+        int times = offset % length;
+
+        for(int i = 1; i <= times; i++) {
+            char first = str[str.length -1];
+            for(int j = str.length - 1; j > 0; j--) {
+                str[j] = str[j-1];
+            }
+            str[0] = first;
+        }
+
+         return str;
+    }
 }
