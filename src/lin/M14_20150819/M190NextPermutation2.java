@@ -31,4 +31,6 @@ public class M190NextPermutation2 {
     public void nextPermutation(int[] nums) {
         // write your code here
     }
+
+//    此题和M52Nextpermutation 一样
 }

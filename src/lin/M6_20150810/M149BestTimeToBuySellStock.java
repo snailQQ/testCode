@@ -18,7 +18,18 @@ public class M149BestTimeToBuySellStock {
    /** @param prices: Given an integer array
     * @return: Maximum profit
     */
-//    public int maxProfit(int[] prices) {
-//        // write your code here
-//    }
+    public int maxProfit(int[] prices) {
+        // write your code here
+       if(prices == null || prices.length == 0) {
+          return 0;
+       }
+
+       int min = Integer.MAX_VALUE;
+       int profit = 0;
+       for(int i : prices) {
+          min = i < min ? i : min;
+          profit = (i - min) > profit ? i-min : profit;
+       }
+       return profit;
+    }
 }

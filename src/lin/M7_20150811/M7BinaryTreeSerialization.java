@@ -1,5 +1,8 @@
 package lin.M7_20150811;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by Paul on 8/10/15.
  * http://www.lintcode.com/en/problem/binary-tree-serialization/
@@ -24,14 +27,45 @@ package lin.M7_20150811;
 //
 //        You can use other method to do serializaiton and deserialization.
 public class M7BinaryTreeSerialization {
+    public static class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+    }
     /**
      * This method will be invoked first, you should design your own algorithm
      * to serialize a binary tree which denote by a root node to a string which
      * can be easily deserialized by your own "deserialize" method later.
      */
-//    public String serialize(TreeNode root) {
-//        // write your code here
-//    }
+    public static String serialize(TreeNode root) {
+        // write your code here
+        if(root == null) {
+            return "#";
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        String rst = String.valueOf(root.val);
+        while(!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if(node.left != null) {
+                queue.offer(node.left);
+                rst = rst + "," + String.valueOf(node.left.val);
+            }else {
+                rst = rst + ",#";
+            }
+            if(node.right != null) {
+                queue.offer(node.right);
+                rst = rst + "," + String.valueOf(node.right.val);
+            }else {
+                rst = rst + ",#";
+            }
+        }
+
+        return rst;
+    }
 
     /**
      * This method will be invoked second, the argument data is what exactly
@@ -43,4 +77,18 @@ public class M7BinaryTreeSerialization {
 //    public TreeNode deserialize(String data) {
 //        // write your code here
 //    }
+    public static void main(String[] args) {
+        TreeNode a = new TreeNode(3);
+        TreeNode b = new TreeNode(9);
+        TreeNode c = new TreeNode(20);
+        TreeNode d = new TreeNode(15);
+        TreeNode e = new TreeNode(7);
+        c.left = d;
+        c.right = e;
+        a.left = b;
+        a.right = c;
+        String s = serialize(a);
+
+
+    }
 }

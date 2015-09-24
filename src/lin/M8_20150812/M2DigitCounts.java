@@ -2,6 +2,7 @@ package lin.M8_20150812;
 
 /**
  * Created by Paul on 8/11/15.
+ * http://www.cnblogs.com/EdwardLiu/p/4274497.html
  */
 //Digit Counts
 //

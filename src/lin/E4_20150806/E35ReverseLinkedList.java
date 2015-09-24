@@ -30,18 +30,33 @@ public class E35ReverseLinkedList {
      */
     public static ListNode reverse(ListNode head) {
         // write your code here
+//        if(head == null) {
+//            return head;
+//        }
+//        ListNode returnNode = new ListNode(0);
+//        while(head != null) {
+//            ListNode temp = new ListNode(0);
+//            temp.val= head.val;
+//            temp.next = returnNode.next;
+//            returnNode.next = temp;
+//            head = head.next;
+//        }
+//        return returnNode.next;
         if(head == null) {
             return head;
         }
-        ListNode returnNode = new ListNode(0);
-        while(head != null) {
-            ListNode temp = new ListNode(0);
-            temp.val= head.val;
-            temp.next = returnNode.next;
-            returnNode.next = temp;
+
+        ListNode cursor = new ListNode(0);
+        cursor.next = null;
+
+        while (head != null) {
+            ListNode node = head;
             head = head.next;
+            node.next = cursor.next;
+            cursor.next = node;
+
         }
-        return returnNode.next;
+        return cursor.next;
     }
 
     public static void main(String [] args) {

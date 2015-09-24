@@ -30,6 +30,24 @@ public class E64MergeSortedArray {
             return;
         }
 
+        for(int i = A.length - 1; i >= 0; i--) {
+            if(m > 0 && n > 0) {
+                if(A[m-1] < B[n-1]) {
+                    A[i] = B[n-1];
+                    n--;
+                } else {
+                    A[i] = A[m-1];
+                    m--;
+                }
+            } else if( n > 0) {
+                A[n-1] = B[n-1];
+                n--;
+            } else if(m > 0) {
+                A[m-1] = A[m-1];
+                m--;
+            }
+        }
+
 
     }
 }

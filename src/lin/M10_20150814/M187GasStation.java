@@ -28,7 +28,39 @@ public class M187GasStation {
      * @param cost: an array of integers
      * @return: an integer
      */
-//    public int canCompleteCircuit(int[] gas, int[] cost) {
-//        // write your code here
-//    }
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        // write your code here
+        if(gas == null || gas.length == 0 || cost == null || cost.length != gas.length) {
+            return -1;
+        }
+
+        int dis = 0;
+        for(int i : gas) {
+            dis += i;
+        }
+
+        int costs = 0;
+        for(int i : cost) {
+            costs += i;
+        }
+
+        if(dis < costs) {
+            return -1;
+        }
+
+        int sum = 0;
+        int total = 0;
+        int index = -1;
+        for(int i = 0; i < gas.length; i++) {
+            sum += gas[i] - cost[i];
+            total += gas[i] - cost[i];
+            if(sum<0) {
+                index = i;
+                sum = 0;
+            }
+        }
+
+
+        return total < 0 ? -1 : index + 1;
+    }
 }

@@ -3,6 +3,9 @@ package lin.M11_20150816;
 /**
  * Created by Paul on 8/16/15.
  * http://www.lintcode.com/en/problem/jump-game/
+ * http://fisherlei.blogspot.com/2012/12/leetcode-jump-game.html
+ * http://www.cnblogs.com/springfor/p/3872320.html
+ * http://www.jiuzhang.com/solutions/jump-game/
  */
 //Jump Game
 //
@@ -85,3 +88,25 @@ public class M116JumpGame {
 //        return farthest >= A.length - 1;
 //    }
 //}
+
+
+//if(A == null || A.length == 0) {
+//        return false;
+//        }
+//
+//        boolean[] dp = new boolean[A.length];
+//
+//        if(A[0]>0) {
+//        dp[0] = true;
+//        }
+//
+//        for(int i = 1; i < A.length; i++) {
+//        for(int j =0; j < i; j++) {
+//        if(dp[j] == true && j + A[j] >= i) {
+//        dp[i] = true;
+//        break;
+//        }
+//        }
+//        }
+//
+//        return dp[A.length - 1];

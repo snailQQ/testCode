@@ -40,6 +40,14 @@ public class M95ValidateBST {
      *     }
      * }
      */
+    public class TreeNode {
+        public int val;
+        public TreeNode left, right;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+    }
     /**
      * @param root: The root of binary tree.
      * @return: True if the binary tree is BST, or false

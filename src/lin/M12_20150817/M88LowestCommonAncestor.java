@@ -41,7 +41,49 @@ public class M88LowestCommonAncestor {
      * @param A and B: two nodes in a Binary.
      * @return: Return the least common ancestor(LCA) of the two nodes.
      */
-//    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
-//        // write your code here
-//    }
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // write your code here
+        if(root == null) {
+            return root;
+        }
+
+        if(q.val < p.val) {
+            TreeNode temp = p;
+            p = q;
+            q = temp;
+        }
+
+        if(p.val < root.val && q.val > root.val) {
+            return root;
+        } else if( q.val < root.val) {
+            root = lowestCommonAncestor(root.left, p, q);
+        } else if( root.val < p.val) {
+            root = lowestCommonAncestor(root.right, p, q);
+        }
+
+        return root;
+    }
+
+    public static void main(String[] args) {
+        TreeNode a = new TreeNode(5);
+        TreeNode b = new TreeNode(3);
+        TreeNode c = new TreeNode(6);
+        TreeNode d = new TreeNode(2);
+        TreeNode e = new TreeNode(4);
+        TreeNode f = new TreeNode(1);
+        a.left = b;
+        a.right = c;
+        b.left = d;
+        b.right = e;
+        d.left = f;
+
+        TreeNode g = lowestCommonAncestor(a, f, e);
+
+    }
 }

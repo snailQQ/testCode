@@ -29,12 +29,46 @@ public class M36ReverseLinkedList2 {
      *     }
      * }
      */
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
+    }
     /**
      * @param ListNode head is the head of the linked list
      * @oaram m and n
      * @return: The head of the reversed ListNode
      */
 //    public ListNode reverseBetween(ListNode head, int m , int n) {
-//        // write your code
+        // write your code
+//        if(head == null || m >= n) {
+//            return head;
+//        }
+//
+//        ListNode dummy = new ListNode(0);
+//        dummy.next = head;
+//        head = dummy;
+//
+//        for(int i= 1; i < m; i++) {
+//            if(head == null) {
+//                return null;
+//            }
+//            head = head.next;
+//        }
+//
+//        ListNode preMNode = head;
+//        ListNode rNode = new ListNode(0);
+//        rNode.next = null;
+//        for(int i = m; i <= n; i++) {
+//            if(head == null) {
+//                return null;
+//            }
+//            ListNode aNode = head;
+//            head = head.next;
+//            rNode.next
+//        }
 //    }
 }

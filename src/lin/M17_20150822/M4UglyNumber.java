@@ -2,6 +2,7 @@ package lin.M17_20150822;
 
 /**
  * Created by Paul on 8/22/15.
+ * http://blog.welkinlan.com/2015/07/28/ugly-number-lintcode-java/
  */
 //Ugly Number
 //
@@ -23,7 +24,25 @@ public class M4UglyNumber {
     * @param k: The number k.
     * @return: The kth prime number as description.
             */
-//    public long kthPrimeNumber(int k) {
-//        // write your code here
-//    }
+    public long kthPrimeNumber(int k) {
+        // write your code here
+        long[] dp = new long[k+1];
+        int p3 = 0;
+        int p5 = 0;
+        int p7 = 0;
+        dp[0] = 1;
+        for(int i = 1; i <= k; i++) {
+            dp[i] = Math.min(Math.min(3 * dp[p3], 5 * dp[p5]), 7 * dp[p7]);
+            if(dp[i] == 3 * dp[p3]) {
+                p3++;
+            }
+            if(dp[i] == 5 * dp[p5]) {
+                p3++;
+            }
+            if(dp[i] == 7 * dp[p7]) {
+                p3++;
+            }
+        }
+        return dp[k];
+    }
 }

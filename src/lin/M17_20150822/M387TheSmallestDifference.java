@@ -1,8 +1,11 @@
 package lin.M17_20150822;
 
+import java.util.Arrays;
+
 /**
  * Created by Paul on 8/22/15.
  * http://www.lintcode.com/en/problem/the-smallest-difference/
+ * https://codesolutiony.wordpress.com/2015/05/21/lintcode-the-smallest-difference/
  */
 //The Smallest Difference
 //
@@ -23,7 +26,28 @@ public class M387TheSmallestDifference {
      * @param A, B: Two integer arrays.
      * @return: Their smallest difference.
      */
-//    public int smallestDifference(int[] A, int[] B) {
-//        // write your code here
-//    }
+    public int smallestDifference(int[] A, int[] B) {
+        // write your code here
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int p1 = 0, p2 = 0;
+        int res = Integer.MAX_VALUE;
+        while (p1 < A.length && p2 < B.length) {
+            if (A[p1]<=B[p2]) {
+                res = Math.min(res, B[p2] - A[p1++]);
+                // if (p1< A.length && A[p1] > B[p2]) {
+                //     res = Math.min(res, A[p1] - B[p2]);
+                // }
+            } else {
+                res = Math.min(res, A[p1] - B[p2++]);
+                // if (p2 < B.length && B[p2] > A[p1]) {
+                //     res = Math.min(res, B[p2] - A[p1]);
+                // }
+            }
+            if(res == 0) {
+                return 0;
+            }
+        }
+        return res;
+    }
 }

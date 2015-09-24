@@ -3,6 +3,7 @@ package lin.M7_20150811;
 /**
  * Created by Paul on 8/10/15.
  * http://www.lintcode.com/en/problem/coins-in-a-line/
+ * http://blog.csdn.net/wutingyehe/article/details/46888919
  */
 //Coins in a Line
 //
@@ -30,7 +31,12 @@ public class M394CoinsInALine {
      * @param n: an integer
      * @return: a boolean which equals to true if the first player will win
      */
-//    public boolean firstWillWin(int n) {
-//        // write your code here
-//    }
+    public boolean firstWillWin(int n) {
+        // write your code here
+        if(n % 3 == 0) {
+            return false;
+        }else {
+            return true;
+        }
+    }
 }

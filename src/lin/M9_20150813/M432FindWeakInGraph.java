@@ -1,6 +1,9 @@
 package lin.M9_20150813;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -44,7 +47,43 @@ public class M432FindWeakInGraph {
      * @param nodes a array of Directed graph node
      * @return a connected set of a directed graph
      */
-//    public List<List<Integer>> connectedSet2(ArrayList<DirectedGraphNode> nodes) {
-//        // Write your code here
-//    }
+    public List<List<Integer>> connectedSet2(ArrayList<DirectedGraphNode> nodes) {
+        // Write your code here
+        List<List<Integer>> rst = new ArrayList<List<Integer>>();
+        if(nodes == null || nodes.size() == 0) {
+            return rst;
+        }
+        int size = nodes.size();
+        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+        for(int i = 0; i < size; i++) {
+            hm.put(nodes.get(i).label, nodes.get(i).label);
+        }
+
+        for(int i = 0; i < size; i++) {
+            DirectedGraphNode node = nodes.get(i);
+            if(hm.get(node.label).intValue() == node.label) {
+                for(DirectedGraphNode neighbor : node.neighbors) {
+                    hm.put(neighbor.label, node.label);
+                }
+            }
+        }
+        HashMap<Integer,List<Integer>> hm2 = new HashMap<Integer,List<Integer>>();
+        for(int i = 0; i < size; i++) {
+            DirectedGraphNode node = nodes.get(i);
+            if(hm2.containsKey(hm.get(node.label))) {
+                List<Integer> list = hm2.get(hm.get(node.label));
+                list.add(node.label);
+            } else {
+                List<Integer> list = new ArrayList<Integer>();
+                list.add(node.label);
+            }
+        }
+        Iterator itor = hm2.entrySet().iterator();
+        while(itor.hasNext()) {
+            rst.add(hm2.get(itor.next()));
+        }
+
+        return rst;
+
+    }
 }

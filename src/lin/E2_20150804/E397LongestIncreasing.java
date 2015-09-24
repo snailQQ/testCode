@@ -3,6 +3,7 @@ package lin.E2_20150804;
 /**
  * Created by Paul on 8/3/15.
  * http://www.lintcode.com/en/problem/longest-increasing-continuous-subsequence/
+ * https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
  */
 
 //Longest Increasing Continuous subsequence
@@ -35,29 +36,37 @@ public class E397LongestIncreasing {
             return 1;
         }
 
-        if(A.length == 2 ) {
-            if(A[0] == A[1]) {
-                return 1;
-            }else {
-                return 2;
-            }
+        int[] dpI = new int[A.length];
+        int[] dpD = new int[A.length];
 
-        }
-
-        int count = 1;
+        dpI[0] = 1;
+        dpD[0] = 1;
         int max = 0;
-        for(int i = 1; i < A.length - 1; i++) {
-            if(count < 2 && ((A[i] > A[i-1] && A[i] > A[i+1]) || (A[i] < A[i-1] && A[i] < A[i+1]))) {
-                if( max < count + 1) {
-                    max = count + 1;
+
+        for(int i = 1; i < A.length; i++) {
+            if(A[i] >= A[i-1]) {
+                if(dpI[i-1] > 0) {
+                    dpI[i] = dpI[i-1] + 1;
+                }else{
+                    dpI[i-1] = 1;
+                    dpI[i] = dpI[i-1] + 1;
                 }
-                count = 1;
-            }else{
-                count++;
+                dpD[i] = 0;
+                max = Math.max(max, dpI[i]);
+
+            }else if(A[i] <= A[i-1]) {
+                if(dpD[i-1] > 0) {
+                    dpD[i] = dpD[i-1] + 1;
+                }else{
+                    dpD[i-1] = 1;
+                    dpD[i] = dpD[i-1] + 1;
+                }
+                dpI[i] = 0;
+                max = Math.max(max, dpD[i]);
             }
         }
-        return Math.max(max, count);
-//        https://codesolutiony.wordpress.com/2015/05/25/lintcode-longest-increasing-continuous-subsequence/
+
+        return max;
     }
 
     public static void main(String [] args) {
@@ -65,3 +74,5 @@ public class E397LongestIncreasing {
         int a = longestIncreasingContinuousSubsequence(array);
     }
 }
+
+

@@ -32,7 +32,32 @@ public class M31ParitionArray {
      *@param k: As description
      *return: The index after partition
      */
-//    public int partitionArray(int[] nums, int k) {
-//        //write your code here
-//    }
+    public int partitionArray(int[] nums, int k) {
+        //write your code here
+        if(nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int left = -1;
+        int right = nums.length;
+        int i = 0;
+
+        while(i < right) {
+            if(nums[i] < k) {
+                i++;
+                left++;
+            }else{
+                swap(nums, i, --right);
+            }
+        }
+
+        return left+1;
+
+    }
+
+    private void swap(int[] nums, int p1, int p2) {
+        int tmp = nums[p1];
+        nums[p1] = nums[p2];
+        nums[p2] = tmp;
+    }
 }

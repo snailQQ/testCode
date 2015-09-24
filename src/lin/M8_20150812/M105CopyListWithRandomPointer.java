@@ -3,6 +3,7 @@ package lin.M8_20150812;
 /**
  * Created by Paul on 8/11/15.
  * http://www.lintcode.com/en/problem/copy-list-with-random-pointer/
+ * http://www.cnblogs.com/springfor/p/3864457.html
  */
 //Copy List with Random Pointer
 //

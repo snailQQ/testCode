@@ -1,7 +1,14 @@
 package lin.M10_20150814;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Paul on 8/13/15.
+ * http://www.lintcode.com/en/problem/gray-code/
+ * http://www.cnblogs.com/yuzhangcmu/p/4121804.html
+ * https://zh.wikipedia.org/wiki/格雷码
+ * http://blog.csdn.net/nicaishibiantai/article/details/38490141
  */
 //Gray Code
 //
@@ -30,7 +37,26 @@ public class M411GrayCode {
      * @param n a number
      * @return Gray code
      */
-//    public ArrayList<Integer> grayCode(int n) {
-//        // Write your code here
-//    }
+    public static ArrayList<Integer> grayCode(int n) {
+        // Write your code here
+        ArrayList<Integer> ret = new ArrayList<Integer>();
+        if (n == 0) {
+            ret.add(0);
+            return ret;
+        }
+
+        ret = grayCode(n - 1);
+
+        for (int i = ret.size() - 1; i >= 0; i--) {
+            int num = ret.get(i);
+            num += 1 << (n - 1);
+            ret.add(num);
+        }
+
+        return ret;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> a = grayCode(3);
+    }
 }

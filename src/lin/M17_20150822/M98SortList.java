@@ -2,6 +2,9 @@ package lin.M17_20150822;
 
 /**
  * Created by Paul on 8/22/15.
+ * http://www.lintcode.com/en/problem/sort-list/
+ * http://www.cnblogs.com/springfor/p/3869372.html
+ * //    http://www.jiuzhang.com/solutions/sort-list/
  */
 //Sort List
 //
@@ -28,5 +31,5 @@ public class M98SortList {
 //    public ListNode sortList(ListNode head) {
 //        // write your code here
 //    }
-//    http://www.jiuzhang.com/solutions/sort-list/
+
 }

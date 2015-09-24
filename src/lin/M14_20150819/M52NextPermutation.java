@@ -37,67 +37,48 @@ public class M52NextPermutation {
      */
     public static int[] nextPermutation(int[] nums) {
         // write your code here
-        if(nums == null || nums.length <= 1) {
+        if(nums == null || nums.length < 2) {
             return nums;
         }
 
-        int pos = -1;
-
-        for(int i = nums.length - 2; i >= -1; i--) {
-            if(nums[i + 1] >= nums[i]) {
-                continue;
-            }else{
-                pos = i;
-                break;
-            }
+        int pos = nums.length - 2;
+        while(pos > 0 && nums[pos] >= nums[pos+1]) {
+            pos--;
         }
 
-
-        int[] returnArray = new int[nums.length];
-        if(pos == -1) {
-            for(int i = 0; i < nums.length; i++) {
-                returnArray[i] = nums[nums.length - 1 - i];
-            }
+        if(pos == 0 && nums[pos] >= nums[pos+1]) {
+            reverse(nums, pos, nums.length-1);
+            return nums;
         } else {
-            for(int i = pos+1; i < nums.length - 1; i++) {
-                if(nums[pos] <= nums[i+1]) {
-                    swap(nums, pos, i);
-                    break;
-                }
+            int pos2 = pos+1;
+            while( pos2 < nums.length && nums[pos2] >= nums[pos]) {
+                pos2++;
             }
-            if(pos == 0){
-                return nums;
-            } else {
-                for(int i = 0; i < pos; i++) {
-                    returnArray[i] = nums[i];
-                }
-
-                for(int i = pos, j = nums.length - 1; i < nums.length; i++, j--) {
-                    returnArray[i] = nums[j];
-                }
-            }
-
-
+            pos2--;
+            swap(nums, pos, pos2);
+            reverse(nums, pos+1, nums.length-1);
         }
 
-        return returnArray;
-
-
+        return nums;
     }
 
-    private static void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+    private static void swap(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 
-    private static void reverse(int[] num, int i, int j){
-        while(i < j)
-            swap(num, i++, j--);
+    private static void reverse(int[] nums, int start, int end) {
+        while(start < end) {
+            swap(nums, start, end);
+            start++;
+            end--;
+        }
     }
+
 
     public static void main(String [] args) {
-        int[] a = {1,2,1};
+        int[] a = {2,1,1};
         int [] b = nextPermutation(a);
     }
 

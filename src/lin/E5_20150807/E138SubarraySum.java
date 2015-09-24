@@ -1,6 +1,7 @@
 package lin.E5_20150807;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Paul on 8/6/15.
@@ -26,28 +27,49 @@ public class E138SubarraySum {
      */
     public static ArrayList<Integer> subarraySum(int[] nums) {
         // write your code here
-        ArrayList<Integer> returnList = new ArrayList<Integer>();
-        if(nums == null || nums.length == 0) {
-            return  returnList;
-        }
-        for(int i = 0; i < nums.length; i++) {
-            int sum = 0;
-            for(int j = i; j < nums.length; j++) {
-                sum += nums[j];
-                if(sum == 0) {
-//                    for(int k = i; k <= j; k++){
-//                        returnList.add(nums[k]);
-//                    }
-                    return returnList;
-                }
+//        ArrayList<Integer> returnList = new ArrayList<Integer>();
+//        if(nums == null || nums.length == 0) {
+//            return  returnList;
+//        }
+//        for(int i = 0; i < nums.length; i++) {
+//            int sum = 0;
+//            for(int j = i; j < nums.length; j++) {
+//                sum += nums[j];
+//                if(sum == 0) {
+////                    for(int k = i; k <= j; k++){
+////                        returnList.add(nums[k]);
+////                    }
+//                    return returnList;
+//                }
+//            }
+//        }
+//        return returnList;
+        int len = nums.length;
+
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        map.put(0, -1);
+
+        int sum = 0;
+        for (int i = 0; i < len; i++) {
+            sum += nums[i];
+
+            if (map.containsKey(sum)) {
+                ans.add(map.get(sum) + 1);
+                ans.add(i);
+                return ans;
             }
+
+            map.put(sum, i);
         }
-        return returnList;
+
+        return ans;
     }
 
     public static void main(String [] args) {
-//        int[] nums = {-3, 1, 2, -3, 4};
-        int[] nums = {-5,10,5,-3,1,1,1,-2,3,-4};
+        int[] nums = {-5, 1, 2, -3, 4};
+//        int[] nums = {-5,10,5,-3,1,1,1,-2,3,-4};
         ArrayList<Integer> aa = subarraySum(nums);
     }
 }

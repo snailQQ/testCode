@@ -1,8 +1,12 @@
 package lin.M17_20150822;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 /**
  * Created by Paul on 8/22/15.
  * http://www.lintcode.com/en/problem/topological-sorting/
+ * http://www.cnblogs.com/lishiblog/p/4187867.html
  */
 //Topological Sorting
 //
@@ -38,11 +42,43 @@ public class M127TopologicalSorting {
      *     DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
      * };
      */
+    class DirectedGraphNode {
+        int label;
+        ArrayList<DirectedGraphNode> neighbors;
+        DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
+    };
     /**
      * @param graph: A list of Directed graph node
      * @return: Any topological order for the given graph.
      */
-//    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
-//        // write your code here
-//    }
+    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
+        // write your code here
+        if(graph == null) {
+            return graph;
+        }
+
+        Stack<DirectedGraphNode> stack = new Stack<DirectedGraphNode>();
+        ArrayList<DirectedGraphNode> visited = new ArrayList<DirectedGraphNode>();
+        for(DirectedGraphNode node : graph) {
+            if(!visited.contains(node)) {
+                dfs(stack, visited, node);
+            }
+        }
+
+        ArrayList<DirectedGraphNode> returnlist = new ArrayList<DirectedGraphNode>();
+        while(!stack.isEmpty()) {
+            returnlist.add( stack.pop());
+        }
+        return returnlist;
+    }
+
+    private void dfs(Stack<DirectedGraphNode> stack, ArrayList<DirectedGraphNode> visited, DirectedGraphNode node) {
+        visited.add(node);
+        for(DirectedGraphNode newNode : node.neighbors) {
+            if(!visited.contains(newNode)) {
+                dfs(stack, visited, newNode);
+            }
+        }
+        stack.push(node);
+    }
 }

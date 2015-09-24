@@ -31,7 +31,39 @@ public class M148SortColors {
      * @param nums: A list of integer which is 0, 1 or 2
      * @return: nothing
      */
-    public void sortColors(int[] nums) {
+    public static void sortColors(int[] nums) {
         // write your code here
+        if(nums == null || nums.length == 0) {
+            return;
+        }
+
+        int pR = -1;
+        int pB = nums.length;
+        int i = 0;
+        while(i < pB) {
+            if(nums[i] == 0) {
+                if(i == pR + 1) {
+                    pR++;
+                    i++;
+                }else{
+                    swap(nums, i, ++pR);
+                }
+            }else if(nums[i] == 2) {
+                swap(nums, i, --pB);
+            }else{
+                i++;
+            }
+        }
+    }
+
+    private static void swap(int[] nums, int p1, int p2) {
+        int tmp = nums[p1];
+        nums[p1] = nums[p2];
+        nums[p2] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {0,2,2,2,2,1,0,1,0,0,0,1,0,2,0};
+        sortColors(a);
     }
 }

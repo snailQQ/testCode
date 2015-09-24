@@ -3,7 +3,7 @@ package lin.M7_20150811;
 /**
  * Created by Paul on 8/10/15.
  * http://www.lintcode.com/en/problem/binary-tree-maximum-path-sum/
- */
+ *///http://www.cnblogs.com/springfor/p/3886411.html
 //Binary Tree Maximum Path Sum
 //
 //        23% Accepted

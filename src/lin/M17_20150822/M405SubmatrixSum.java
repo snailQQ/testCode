@@ -30,7 +30,7 @@ public class M405SubmatrixSum {
      * @param matrix an integer matrix
      * @return the coordinate of the left-up and right-down number
      */
-    public int[][] submatrixSum(int[][] matrix) {
+    public static int[][] submatrixSum(int[][] matrix) {
         // Write your code here
         int[][] result = new int[2][2];
         int M = matrix.length;
@@ -62,6 +62,12 @@ public class M405SubmatrixSum {
             }
         }
         return result;
+
+    }
+
+    public static void main(String[] args) {
+        int[][] a = {{1 ,5 ,7},{3 ,7 ,-8},{4 ,-8 ,9}};
+        int[][] b = submatrixSum(a);
 
     }
 }

@@ -2,6 +2,7 @@ package lin.E3_20150805;
 
 /**
  * Created by Paul on 8/5/15.
+ * http://www.lintcode.com/en/problem/nth-to-last-node-in-list/#
  */
 //Nth to Last Node in List
 //
@@ -30,7 +31,62 @@ public class E166NthToLastNodeInList {
      * @param n: An integer.
      * @return: Nth to last node of a singly linked list.
      */
+    ListNode nthToLast(ListNode head, int n) {
+        // write your code here
+        if (head == null) {
+            return head;
+        }
+
+        ListNode front = head;
+
+        for (int i = 0; i < n; i++) {
+            if (front != null) {
+                front = front.next;
+            } else {
+                return null;
+            }
+        }
+
+        while (front != null) {
+            front = front.next;
+            head = head.next;
+        }
+
+        return head;
+    }
+}
+
+
+//    /**
+//     * @param head: The first node of linked list.
+//     * @param n: An integer.
+//     * @return: Nth to last node of a singly linked list.
+//     */
 //    ListNode nthToLast(ListNode head, int n) {
 //        // write your code here
+//        if(head == null) {
+//            return null;
+//        }
+//
+//        int size = 0;
+//        ListNode ln = head;
+//        while(ln != null) {
+//            size++;
+//            ln = ln.next;
+//        }
+//
+//        int position = size - n;
+//        if( position < 0) {
+//            return null;
+//        } else {
+//            while(head != null) {
+//                if(position == 0) {
+//                    return head;
+//                } else {
+//                    head = head.next;
+//                    position--;
+//                }
+//            }
+//        }
+//        return null;
 //    }
-}

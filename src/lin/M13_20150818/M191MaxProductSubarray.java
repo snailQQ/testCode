@@ -3,6 +3,7 @@ package lin.M13_20150818;
 /**
  * Created by Paul on 8/17/15.
  * http://www.lintcode.com/en/problem/maximum-product-subarray/
+ * http://blog.csdn.net/worldwindjp/article/details/39826823
  */
 //Maximum Product Subarray
 //

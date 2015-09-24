@@ -25,7 +25,33 @@ public class M79LongestCommonSubstring {
      * @param A, B: Two string.
      * @return: the length of the longest common substring.
      */
-//    public int longestCommonSubstring(String A, String B) {
-//        // write your code here
-//    }
+    public int longestCommonSubstring(String A, String B) {
+        // write your code here
+        if(A == null || A.length() == 0 || B == null || B.length() ==0) {
+            return 0;
+        }
+
+        int[][] dp = new int[A.length()+1][B.length()+1];
+
+        for(int i = 0; i < A.length()+1; i++) {
+            dp[i][0] = 0;
+        }
+
+        for(int j = 0; j < B.length()+1; j++) {
+            dp[0][j] = 0;
+        }
+
+        int max = 0;
+
+        for(int i = 1; i < A.length()+1; i++) {
+            for(int j = 1; j < B.length()+1; j++) {
+                if(A.charAt(i-1) == B.charAt(j-1)) {
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                    max = Math.max(dp[i][j], max);
+                }
+            }
+        }
+
+        return max;
+    }
 }
