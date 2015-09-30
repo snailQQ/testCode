@@ -53,22 +53,25 @@ public class E413ReverseInteger {
 }
 
 
-//int sign = 1;
-//long abs = x;
-//long rev = 0;
-//if (x < 0) {
-//        sign = -1;
-//        abs = 0 - abs;
+//    public int reverse(int x) {
+//        int flag = 1;
+//        if(x < 0) {
+//            flag = -1;
 //        }
-//        // now remove numbers from abs one by one
-//        // and put these numbers into rev
-//        while (abs != 0) {
-//        rev *= 10;
-//        rev += abs % 10;
-//        abs /= 10;
+//
+//        if(x > -10 && x < 10) {
+//            return x;
 //        }
-//        if (rev > Integer.MAX_VALUE) {
-//        return 0;
-//        } else {
-//        return sign * (int) rev;
+//
+//        x = Math.abs(x);
+//        long newX = 0;
+//        while(x > 0) {
+//            newX = newX * 10 + x % 10;
+//            x = x / 10;
 //        }
+//        newX = newX * flag;
+//        if (newX > Integer.MAX_VALUE || newX < Integer.MIN_VALUE) {
+//            return 0;
+//        }
+//        return (int)newX;
+//    }

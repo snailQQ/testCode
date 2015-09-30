@@ -32,32 +32,55 @@ public class E420CountAndSay {
 
     public static String countAndSay(int n) {
         // Write your code here
-        String initString = "1";
+//        String initString = "1";
+//        if(n == 1) {
+//            return initString;
+//        }
+//
+//        for(int i = 2; i <= n; i++) {
+//            String newString = "";
+//            char letter = initString.charAt(0);
+//            int count = 1;
+//            for(int j = 1; j < initString.length(); j++) {
+//                if(Integer.valueOf(initString.charAt(j)) == letter) {
+//                    count++;
+//                }else{
+//                    newString += String.valueOf(count) + String.valueOf(letter);
+//                    letter = initString.charAt(j);
+//                    count = 1;
+//                }
+//            }
+//            newString += String.valueOf(count) + String.valueOf(letter);
+//            initString = newString;
+//        }
+//        return initString;
         if(n == 1) {
-            return initString;
+            return "1";
         }
+        String cs = "1";
 
         for(int i = 2; i <= n; i++) {
-            String newString = "";
-            char letter = initString.charAt(0);
             int count = 1;
-            for(int j = 1; j < initString.length(); j++) {
-                if(Integer.valueOf(initString.charAt(j)) == letter) {
+            String newStr = "";
+            char letter = cs.charAt(0);
+            for(int j = 1; j < cs.length(); j++) {
+                if(cs.charAt(j) == letter) {
                     count++;
-                }else{
-                    newString += String.valueOf(count) + String.valueOf(letter);
-                    letter = initString.charAt(j);
+                } else {
+                    newStr += String.valueOf(count) + String.valueOf(letter);
+                    letter = cs.charAt(j);
                     count = 1;
                 }
             }
-            newString += String.valueOf(count) + String.valueOf(letter);
-            initString = newString;
+            newStr += String.valueOf(count) + String.valueOf(letter);
+            cs = newStr;
         }
-        return initString;
+
+        return cs;
     }
 
     public static void main(String [] args) {
-        String a = countAndSay(3);
+        String a = countAndSay(4);
     }
 
 //    public String countAndSay(int n) {

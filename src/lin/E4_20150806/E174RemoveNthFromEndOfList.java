@@ -23,7 +23,7 @@ package lin.E4_20150806;
 
 
 public class E174RemoveNthFromEndOfList {
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode(int val) {
@@ -36,27 +36,51 @@ public class E174RemoveNthFromEndOfList {
      * @param n: An integer.
      * @return: The head of linked list.
      */
-    ListNode removeNthFromEnd(ListNode head, int n) {
+    public static ListNode  removeNthFromEnd(ListNode head, int n) {
         // write your code here
-        if (n <= 0) {
-            return null;
+//        if (n <= 0) {
+//            return null;
+//        }
+//
+//        ListNode dummy = new ListNode(0);
+//        dummy.next = head;
+//
+//        ListNode slower = dummy;
+//        for (int i = 0; i < n; i++) {
+//            if (head == null) {
+//                return null;
+//            }
+//            head = head.next;
+//        }
+//        while (head != null) {
+//            head = head.next;
+//            slower = slower.next;
+//        }
+//        slower.next = slower.next.next;
+//        return dummy.next;
+        if(head == null) {
+            return head;
         }
-
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-
-        ListNode slower = dummy;
-        for (int i = 0; i < n; i++) {
-            if (head == null) {
+        ListNode fast = dummy;
+        for(int i = 0; i < n; i++) {
+            if(fast == null) {
                 return null;
             }
-            head = head.next;
+            fast = fast.next;
         }
-        while (head != null) {
-            head = head.next;
-            slower = slower.next;
+        ListNode slow = dummy.next;
+        while(fast != null) {
+            slow = slow.next;
+            fast = fast.next;
         }
-        slower.next = slower.next.next;
+        slow.next = slow.next.next;
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode node = new ListNode(1);
+        ListNode a = removeNthFromEnd(node, 1);
     }
 }

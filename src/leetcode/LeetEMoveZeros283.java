@@ -47,7 +47,7 @@ package leetcode;
 //}
 
 
-public class LeetE283MoveZeros {
+public class LeetEMoveZeros283 {
     public static void moveZeroes(int[] nums) {
         if(nums == null || nums.length == 0) {
             return;

@@ -1,9 +1,6 @@
 package lin.M7_20150811;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Paul on 8/10/15.
@@ -43,42 +40,75 @@ public class M70BinaryTreeLevelOrderTraversal2 {
         }
     }
     /**
-     * @param root: The root of binary tree.
+     * @param root : The root of binary tree.
      * @return: buttom-up level order a list of lists of integer
      */
-    public static ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
+    public static List<List<Integer>> levelOrderBottom(TreeNode root) {
         // write your code here
-        ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
+//        ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
+//        if(root == null) {
+//            return rst;
+//        }
+//
+//        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+//        Stack<ArrayList<Integer>> aStack = new Stack<ArrayList<Integer>>();
+//
+//        queue.offer(root);
+//        while(!queue.isEmpty()) {
+//            int size = queue.size();
+//            ArrayList<Integer> list = new ArrayList<Integer>();
+//            for(int i = 0; i < size; i++) {
+//                TreeNode aNode = queue.poll();
+//                list.add(aNode.val);
+//                if(aNode.left != null) {
+//                    queue.offer(aNode.left);
+//                }
+//                if(aNode.right != null) {
+//                    queue.offer(aNode.right);
+//                }
+//            }
+//            if(list.size() > 0) {
+//                aStack.push(list);
+//            }
+//        }
+//
+//        while(!aStack.isEmpty()) {
+//            rst.add(aStack.pop());
+//        }
+//        return rst;
+        List<List<Integer>> rst = new ArrayList<List<Integer>>();
         if(root == null) {
             return rst;
         }
-
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        Stack<ArrayList<Integer>> aStack = new Stack<ArrayList<Integer>>();
-
         queue.offer(root);
+        int count = 1;
+        List<Integer> list = new ArrayList<Integer>();
+        int addCount = 0;
         while(!queue.isEmpty()) {
-            int size = queue.size();
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            for(int i = 0; i < size; i++) {
-                TreeNode aNode = queue.poll();
-                list.add(aNode.val);
-                if(aNode.left != null) {
-                    queue.offer(aNode.left);
-                }
-                if(aNode.right != null) {
-                    queue.offer(aNode.right);
-                }
+            TreeNode node = queue.poll();
+            list.add(node.val);
+            count--;
+            if(node.left != null) {
+                queue.offer(node.left);
+                addCount++;
             }
-            if(list.size() > 0) {
-                aStack.push(list);
+            if(node.right != null) {
+                queue.offer(node.right);
+                addCount++;
+            }
+            if(count == 0) {
+                rst.add(new ArrayList<Integer>(list));
+                count = addCount;
+                addCount = 0;
+                list.clear();
             }
         }
-
-        while(!aStack.isEmpty()) {
-            rst.add(aStack.pop());
+        List<List<Integer>> rst1 = new ArrayList<List<Integer>>();
+        for(int i = rst.size()-1; i >= 0; i--) {
+            rst1.add(rst.get(i));
         }
-        return rst;
+        return rst1;
     }
 
     public static void main(String [] args) {
@@ -91,10 +121,10 @@ public class M70BinaryTreeLevelOrderTraversal2 {
         TreeNode g = new TreeNode(7);
         e.left = f;
         e.right = g;
-        b.left = c;
-        b.right = d;
+//        b.left = c;
+//        b.right = d;
         a.left = b;
         a.right = e;
-        ArrayList<ArrayList<Integer>> ss = levelOrderBottom(a);
+        List<List<Integer>> ss = levelOrderBottom(a);
     }
 }
