@@ -26,7 +26,7 @@ import java.util.HashMap;
 //
 //        Hide Tags Hash Table
 
-public class LeetE205IsomorphicStrings {
+public class LeetEIsomorphicStrings205 {
 //    public boolean isIsomorphic(String s, String t) {
 //        if(s == null && t == null) {
 //            return true;

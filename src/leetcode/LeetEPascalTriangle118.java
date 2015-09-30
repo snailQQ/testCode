@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Paul on 9/24/15.
  */
-public class LeetE118PascalTriangle {
+public class LeetEPascalTriangle118 {
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> rst = new ArrayList<List<Integer>>();
         if(numRows < 1) {

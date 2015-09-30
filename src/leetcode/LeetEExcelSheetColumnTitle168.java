@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by Paul on 9/29/15.
  */
-public class LeetE168ExcelSheetColumnTitle {
+public class LeetEExcelSheetColumnTitle168 {
     public static String convertToTitle(int n) {
         if(n < 1) {
             return "";

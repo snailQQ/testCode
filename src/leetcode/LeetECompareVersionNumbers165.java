@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by Paul on 9/28/15.
  */
-public class LeetE165CompareVersionNumbers {
+public class LeetECompareVersionNumbers165 {
     public static int compareVersion(String version1, String version2) {
         String[] arr1 = version1.split("\\.");
         String[] arr2 = version2.split("\\.");

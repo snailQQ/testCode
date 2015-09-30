@@ -10,7 +10,7 @@ package leetcode;
 //        Hide Tags Array Hash Table
 //        Hide Similar Problems (E) Contains Duplicate (M) Contains Duplicate III
 
-public class LeetE219ContainsDupliacate2 {
+public class LeetEContainsDupliacate2_219 {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         if(nums == null || nums.length < k) {
             return false;

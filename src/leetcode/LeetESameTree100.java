@@ -21,7 +21,7 @@ package leetcode;
  * }
  */
 
-public class LeetE100SameTree {
+public class LeetESameTree100 {
     public class TreeNode {
         int val;
         TreeNode left;

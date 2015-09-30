@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by Paul on 9/29/15.
  */
-public class LeetE276PaintFence {
+public class LeetEPaintFence276 {
     public static int numWays(int n, int k) {
         if(k == 0 || n == 0) {
             return 0;

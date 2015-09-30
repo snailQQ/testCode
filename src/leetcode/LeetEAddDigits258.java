@@ -35,7 +35,7 @@ package leetcode;
 
 //solution 2
 //    除了0以外任何数字各位加起来都在1到9之间循环
-public class LeetE258AddDigits {
+public class LeetEAddDigits258 {
     public int addDigits(int num) {
         if(num == 0) {
             return 0;

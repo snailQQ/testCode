@@ -4,7 +4,7 @@ package leetcode;
  * Created by Paul on 9/29/15.
  * http://blog.csdn.net/lisonglisonglisong/article/details/45309651
  */
-public class LeetE204CountPrimes {
+public class LeetECountPrimes204 {
     public static int countPrimes(int n) {
         if(n <= 2) {
             return 0;

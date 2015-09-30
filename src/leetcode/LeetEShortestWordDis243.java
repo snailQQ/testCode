@@ -20,7 +20,7 @@ package leetcode;
 //        Hide Tags Array
 //        Hide Similar Problems (M) Shortest Word Distance II (M) Shortest Word Distance III
 
-public class LeetE243ShortestWordDis {
+public class LeetEShortestWordDis243 {
     public int shortestDistance(String[] words, String word1, String word2) {
         if(words == null || words.length < 2) {
             return Integer.MAX_VALUE;

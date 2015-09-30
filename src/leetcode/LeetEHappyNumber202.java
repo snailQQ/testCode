@@ -26,7 +26,7 @@ import java.util.HashSet;
 //        Hide Tags Hash Table Math
 //        Hide Similar Problems (E) Add Digits (E) Ugly Number
 
-public class LeetE202HappyNumber {
+public class LeetEHappyNumber202 {
     public static boolean isHappy(int n) {
         HashSet<Integer> hs = new HashSet<Integer>();
         while(n != 1) {
