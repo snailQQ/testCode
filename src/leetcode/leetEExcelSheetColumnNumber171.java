@@ -29,7 +29,7 @@ import java.util.HashMap;
 //        Hide Tags Math
 //        Hide Similar Problems (E) Excel Sheet Column Title
 
-public class leetEExcelSheetColumnNumber171 {
+public class LeetEExcelSheetColumnNumber171 {
     public int titleToNumber(String s) {
         if(s == null || s.length() == 0) {
             return 0;

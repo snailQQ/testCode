@@ -15,7 +15,8 @@ public class LeetEPalindromePermutation266 {
         LinkedList<Character> list = new LinkedList<Character>();
         for(int i = 0; i < s.length(); i++) {
             if(list.contains(s.charAt(i))) {
-                list.remove(s.charAt(i));
+                int index = list.indexOf(s.charAt(i));
+                list.remove(index);
             } else {
                 list.add(s.charAt(i));
             }

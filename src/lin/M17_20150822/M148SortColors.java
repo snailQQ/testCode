@@ -33,24 +33,46 @@ public class M148SortColors {
      */
     public static void sortColors(int[] nums) {
         // write your code here
+//        if(nums == null || nums.length == 0) {
+//            return;
+//        }
+//
+//        int pR = -1;
+//        int pB = nums.length;
+//        int i = 0;
+//        while(i < pB) {
+//            if(nums[i] == 0) {
+//                if(i == pR + 1) {
+//                    pR++;
+//                    i++;
+//                }else{
+//                    swap(nums, i, ++pR);
+//                }
+//            }else if(nums[i] == 2) {
+//                swap(nums, i, --pB);
+//            }else{
+//                i++;
+//            }
+//        }
         if(nums == null || nums.length == 0) {
             return;
         }
 
-        int pR = -1;
-        int pB = nums.length;
+        int redP = 0;
+        int blueP = nums.length - 1;
         int i = 0;
-        while(i < pB) {
+
+        while(i <= blueP) {
             if(nums[i] == 0) {
-                if(i == pR + 1) {
-                    pR++;
-                    i++;
-                }else{
-                    swap(nums, i, ++pR);
-                }
-            }else if(nums[i] == 2) {
-                swap(nums, i, --pB);
-            }else{
+                nums[i] = nums[redP];
+                nums[redP] = 0;
+                redP++;
+                i++;
+            } else if(nums[i] == 2) {
+                nums[i] = nums[blueP];
+                nums[blueP] = 2;
+                blueP--;
+            } else {
                 i++;
             }
         }
@@ -63,7 +85,8 @@ public class M148SortColors {
     }
 
     public static void main(String[] args) {
-        int[] a = {0,2,2,2,2,1,0,1,0,0,0,1,0,2,0};
+//        int[] a = {0,2,2,2,2,1,0,1,0,0,0,1,0,2,0};
+        int[] a = {1,2,0};
         sortColors(a);
     }
 }

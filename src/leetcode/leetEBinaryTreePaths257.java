@@ -7,7 +7,7 @@ import java.util.List;
  * Created by Paul on 9/29/15.
  * https://leetcode.com/discuss/52250/binary-tree-paths-dfs-java-solution
  */
-public class leetEBinaryTreePaths257 {
+public class LeetEBinaryTreePaths257 {
     public static class TreeNode {
         public int val;
         public TreeNode left, right;

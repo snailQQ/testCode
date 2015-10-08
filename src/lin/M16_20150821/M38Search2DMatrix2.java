@@ -60,4 +60,74 @@ public class M38Search2DMatrix2 {
 //        }
 
 //    }
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int rowStart = 0;
+        int rowEnd = m - 1;
+        int colStart = 0;
+        int colEnd = n - 1;
+
+        if(m == 1) {
+            while(colStart + 1 < colEnd) {
+                int colMid = colStart + (colEnd - colStart) / 2;
+                if(matrix[0][colMid] == target) {
+                    return true;
+                } else if(matrix[0][colMid] > target) {
+                    colEnd = colMid;
+                } else {
+                    colStart = colMid;
+                }
+            }
+            return (matrix[0][colEnd] == target || matrix[0][colStart] == target);
+        }
+
+        if(n == 1) {
+            while(rowStart + 1 < rowEnd) {
+                int rowMid = rowStart + (rowEnd - rowStart) / 2;
+                if(matrix[rowMid][0] == target) {
+                    return true;
+                } else if(matrix[rowMid][0] > target) {
+                    rowEnd = rowMid;
+                } else {
+                    rowStart = rowMid;
+                }
+            }
+
+            return (matrix[rowStart][0] == target || matrix[rowEnd][0] == target);
+
+        }
+
+        while(rowStart + 1 < rowEnd && colStart + 1 < colEnd) {
+            int rowMid = rowStart + (rowEnd - rowStart) / 2;
+            int colMid = colStart + (colEnd - colStart) / 2;
+
+            if(matrix[0][colMid] == target) {
+                return true;
+            } else if(matrix[0][colMid] > target) {
+                colEnd = colMid;
+            } else {
+                colStart = colMid;
+            }
+
+            if(matrix[rowMid][0] == target) {
+                return true;
+            } else if(matrix[rowMid][0] > target) {
+                rowEnd = rowMid;
+            } else {
+                rowStart = rowMid;
+            }
+        }
+
+        return (matrix[rowStart][colEnd] == target || matrix[rowStart][colStart] == target || matrix[rowEnd][colEnd] == target || matrix[rowEnd][colStart] == target);
+    }
+
+    public static void main(String[] args) {
+        boolean a = searchMatrix(new int[][]{{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}}, 5);
+    }
 }
