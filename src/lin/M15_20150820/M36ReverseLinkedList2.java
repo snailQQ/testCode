@@ -42,33 +42,38 @@ public class M36ReverseLinkedList2 {
      * @oaram m and n
      * @return: The head of the reversed ListNode
      */
-//    public ListNode reverseBetween(ListNode head, int m , int n) {
-        // write your code
-//        if(head == null || m >= n) {
-//            return head;
-//        }
-//
-//        ListNode dummy = new ListNode(0);
-//        dummy.next = head;
-//        head = dummy;
-//
-//        for(int i= 1; i < m; i++) {
-//            if(head == null) {
-//                return null;
-//            }
-//            head = head.next;
-//        }
-//
-//        ListNode preMNode = head;
-//        ListNode rNode = new ListNode(0);
-//        rNode.next = null;
-//        for(int i = m; i <= n; i++) {
-//            if(head == null) {
-//                return null;
-//            }
-//            ListNode aNode = head;
-//            head = head.next;
-//            rNode.next
-//        }
-//    }
+    public static ListNode reverseBetween(ListNode head, int m , int n) {
+    	if(head == null ) {
+            return head;
+        } 
+        int diff = n-m;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        head = dummy;
+        while(m-1 > 0 && head.next != null) {
+            head = head.next;
+            m--;
+        }
+        
+        ListNode pre = head;
+        ListNode cur = head.next;
+        while(diff >= 0 && cur.next != null) {
+        	ListNode temp = cur.next;
+            cur.next = cur.next.next;
+            temp.next = cur;
+            pre.next = temp;
+            diff--;
+        }
+        
+        return dummy.next;
+    }
+    
+    public static void main(String[] args) {
+    	ListNode a2 = new ListNode(1);
+    	ListNode a1 = new ListNode(3);
+		ListNode a = new ListNode(5);
+		a2.next = a1;
+		a1.next = a;
+		ListNode b = reverseBetween(a2, 1, 3);
+	}
 }

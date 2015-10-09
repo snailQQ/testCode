@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by Paul on 9/28/15.
  */
-public class leetEStringToInteger8 {
+public class LeetEStringToInteger8 {
     public static int myAtoi(String str) {
         if(str == null || str.length() < 1) {
             return 0;

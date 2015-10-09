@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by Paul on 10/1/15.
  */
-public class leetEShortestWordDistance3_245 {
+public class LeetEShortestWordDistance3_245 {
     public static int shortestWordDistance(String[] words, String word1, String word2) {
         int posA = -1;
         int posB = -1;
@@ -31,7 +31,7 @@ public class leetEShortestWordDistance3_245 {
 
     }
 
-    public static void main(String[] args) {
-
-    }
+//    public static void main(String[] args) {
+//
+//    }
 }
