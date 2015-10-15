@@ -42,40 +42,76 @@ public class M170RotateList {
      */
     public static ListNode rotateRight(ListNode head, int k) {
         // write your code here
-        if(head == null) {
+//        if(head == null) {
+//            return head;
+//        }
+//
+//        ListNode length = head;
+//        int count = 0;
+//        while(length != null) {
+//            length = length.next;
+//            count++;
+//        }
+//
+//        int steps = k % count;
+//        if(steps == 0) {
+//            return head;
+//        }
+//
+//        ListNode dummy = new ListNode(0);
+//        dummy.next = head;
+//        ListNode front = dummy;
+//        ListNode back = dummy;
+//        for(int i = 0; i < steps; i++) {
+//            front = front.next;
+//        }
+//
+//        while(front.next != null) {
+//            front = front.next;
+//            back = back.next;
+//        }
+//
+//        ListNode temp = dummy.next;
+//        dummy.next = back.next;
+//        back.next = null;
+//        front.next = temp;
+//
+//        return dummy.next;
+    	if(head == null || head.next == null) {
             return head;
         }
-
+        
         ListNode length = head;
         int count = 0;
         while(length != null) {
             length = length.next;
             count++;
         }
-
+        
         int steps = k % count;
         if(steps == 0) {
             return head;
         }
-
+        
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode front = dummy;
-        ListNode back = dummy;
-        for(int i = 0; i < steps; i++) {
-            front = front.next;
+        ListNode p = head;
+        while(steps > 0) {
+            if(p.next == null) {
+                return null;
+            }
+            p = p.next;
+            steps--;
         }
-
-        while(front.next != null) {
-            front = front.next;
-            back = back.next;
+        
+        while(p.next != null) {
+            p = p.next;
+            head = head.next;
         }
-
-        ListNode temp = dummy.next;
-        dummy.next = back.next;
-        back.next = null;
-        front.next = temp;
-
+        
+        p.next = dummy.next;
+        dummy.next = head.next;
+        head.next = null;
         return dummy.next;
     }
 

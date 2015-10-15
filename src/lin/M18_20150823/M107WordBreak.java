@@ -34,30 +34,31 @@ public class M107WordBreak {
      * @param s: A string s
      * @param dict: A dictionary of words dict
      */
-    public static boolean wordBreak(String s, Set<String> dict) {
+    public static boolean wordBreak(String s, Set<String> wordDict) {
         // write your code here
-        if(s == null || s.length() == 0 || dict.isEmpty()) {
+    	if(s == null || s.length() == 0 || wordDict.isEmpty()) {
             return false;
         }
-
-        boolean[] flgArray = new boolean[s.length()+1];
-        flgArray[0] = true;
-
-        for(int i = 1; i < s.length(); i++) {
-            for(int j = 0; j < i; j++) {
-                if(flgArray[j] && dict.contains(s.substring(j,i))){
-                    flgArray[i] = true;
+        
+        boolean[] dp = new boolean[s.length()+1];
+        dp[0] = true;
+        
+        for(int i = 0; i < s.length(); i++) {
+            for(int j = 0; j <= i; j++) {
+                if(dp[j] && wordDict.contains(s.substring(j, i+1))) {
+                    dp[i+1] = true;
                     break;
                 }
             }
         }
-        return flgArray[s.length()];
+        
+        return dp[s.length()];
     }
 
     public static void main(String[] args) {
         String s = "a";
         Set<String> dict = new HashSet<String>();
-        dict.add("b");
+        dict.add("a");
         boolean x = wordBreak(s, dict);
 
     }
