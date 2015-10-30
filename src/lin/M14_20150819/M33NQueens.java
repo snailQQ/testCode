@@ -49,7 +49,7 @@ public class M33NQueens {
      * @return: All distinct solutions
      * For example, A string '...Q' shows a queen on forth position
      */
-    public ArrayList<String[]> solveNQueens(int n) {
+    public static ArrayList<String[]> solveNQueens(int n) {
         ArrayList<String[]> res = new ArrayList<String[]>();
         if(n<=0)
             return res;
@@ -60,7 +60,7 @@ public class M33NQueens {
         return res;
     }
 
-    public void DFS_helper(int nQueens, ArrayList<String[]> res, int row, int[] columnVal){
+    public static void DFS_helper(int nQueens, ArrayList<String[]> res, int row, int[] columnVal){
         if(row == nQueens){
             String[] unit = new String[nQueens];
             for(int i = 0; i < nQueens; i++){
@@ -86,12 +86,16 @@ public class M33NQueens {
         }
     }
 
-    public boolean isValid(int row, int [] columnVal){
+    public static boolean isValid(int row, int [] columnVal){
         for(int i = 0; i < row; i++){
             if(columnVal[row] == columnVal[i]
                     ||Math.abs(columnVal[row]-columnVal[i]) == row-i)
                 return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String[]> a = solveNQueens(4);
     }
 }

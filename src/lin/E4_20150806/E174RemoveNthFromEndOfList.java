@@ -63,14 +63,14 @@ public class E174RemoveNthFromEndOfList {
         }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode fast = dummy;
+        ListNode fast = dummy.next;
         for(int i = 0; i < n; i++) {
             if(fast == null) {
                 return null;
             }
             fast = fast.next;
         }
-        ListNode slow = dummy.next;
+        ListNode slow = dummy;
         while(fast != null) {
             slow = slow.next;
             fast = fast.next;
@@ -80,7 +80,16 @@ public class E174RemoveNthFromEndOfList {
     }
 
     public static void main(String[] args) {
-        ListNode node = new ListNode(1);
-        ListNode a = removeNthFromEnd(node, 1);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+//        1->2->3->4->
+        ListNode a = removeNthFromEnd(node1, 2);
     }
 }
