@@ -40,25 +40,54 @@ public class _35SearchInsertPosition {
 //        } else {
 //            return nums.length;
 //        }
+
+//        if(nums == null || nums.length == 0) {
+//            return 0;
+//        }
+//
+//        if(target <= nums[0]) {
+//            return 0;
+//        }
+//
+//        if(target > nums[nums.length-1]) {
+//            return nums.length;
+//        }
+//
+//        for(int i = 1 ; i < nums.length ; i++) {
+//            if(nums[i] >= target) {
+//                return i;
+//            }
+//        }
+//
+//        return nums.length;
         if(nums == null || nums.length == 0) {
             return 0;
         }
 
-        if(target <= nums[0]) {
-            return 0;
-        }
+        int start = 0;
+        int end = nums.length - 1;
 
-        if(target > nums[nums.length-1]) {
-            return nums.length;
-        }
-
-        for(int i = 1 ; i < nums.length ; i++) {
-            if(nums[i] >= target) {
-                return i;
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if(nums[mid] == target) {
+                end = mid;
+            } else if(nums[mid] < target) {
+                start = mid;
+            } else {
+                end = mid;
             }
         }
 
-        return nums.length;
+        if(nums[start] >= target) {
+            return start;
+        }
+
+        if(nums[end] < target) {
+            return end + 1;
+        }
+
+
+        return end;
     }
 
     public static void main(String[] args) {
