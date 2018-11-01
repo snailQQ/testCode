@@ -1,7 +1,7 @@
 package leetcode.leetcode;
 
 /**
- * Created by pengcheng.qi on 10/31/17.
+ * Created by SNAILQQ on 10/31/17.
  */
 public class TreeNode {
   public int val;

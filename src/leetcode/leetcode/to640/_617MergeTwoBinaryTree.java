@@ -3,7 +3,7 @@ package leetcode.leetcode.to640;
 import leetcode.leetcode.TreeNode;
 
 /**
- * Created by pengcheng.qi on 11/1/17.
+ * Created by SNAILQQ on 11/1/17.
  *
  * Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
 

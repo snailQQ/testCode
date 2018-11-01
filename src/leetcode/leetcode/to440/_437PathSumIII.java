@@ -3,7 +3,7 @@ package leetcode.leetcode.to440;
 import leetcode.leetcode.TreeNode;
 
 /**
- * Created by pengcheng.qi on 11/1/17.
+ * Created by SNAILQQ on 11/1/17.
  * https://leetcode.com/problems/path-sum-iii/discuss/
  *
  *

@@ -1,7 +1,7 @@
 package test;
 
 /**
- * Created by pengcheng.qi on 9/20/17.
+ * Created by SNAILQQ on 9/20/17.
  */
 public class FindNumber {
   public static int findNumberByPosition(int position) {

@@ -1,7 +1,7 @@
 //package lin.New20170924;
 //
 ///**
-// * Created by pengcheng.qi on 9/24/17.
+// * Created by SNAILQQ on 9/24/17.
 // */
 //public class Lin397LongestIncreasingContinuousSubsequence {
 //  int LIS(int[] A) {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by pengcheng.qi on 10/27/17.
+ * Created by SNAILQQ on 10/27/17.
  *
  * https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
  *

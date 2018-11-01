@@ -1,7 +1,7 @@
 package leetcode.leetcode.to400;
 
 /**
- * Created by pengcheng.qi on 10/27/17.
+ * Created by SNAILQQ on 10/27/17.
  *
  * Given a positive integer num, write a function which returns True if num is a perfect square else False.
 

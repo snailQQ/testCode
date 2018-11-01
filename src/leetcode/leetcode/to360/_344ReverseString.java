@@ -1,7 +1,7 @@
 package leetcode.leetcode.to360;
 
 /**
- * Created by pengcheng.qi on 10/30/17.
+ * Created by SNAILQQ on 10/30/17.
  *
  * Write a function that takes a string as input and returns the string reversed.
 

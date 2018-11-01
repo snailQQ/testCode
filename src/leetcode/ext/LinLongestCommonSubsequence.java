@@ -1,7 +1,7 @@
 package leetcode.ext;
 
 /**
- * Created by pengcheng.qi on 10/6/17.
+ * Created by SNAILQQ on 10/6/17.
  *
  * Longest Common Subsequence
  * • http://www.lintcode.com/problem/longest-common-subsequence/

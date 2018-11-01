@@ -1,7 +1,7 @@
 package leetcode.leetcode.to480;
 
 /**
- * Created by pengcheng.qi on 10/27/17.
+ * Created by SNAILQQ on 10/27/17.
  *
  *https://leetcode.com/problems/heaters/description/
  * Winter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.

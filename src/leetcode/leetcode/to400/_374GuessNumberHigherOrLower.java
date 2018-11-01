@@ -1,7 +1,7 @@
 package leetcode.leetcode.to400;
 
 /**
- * Created by pengcheng.qi on 10/27/17.
+ * Created by SNAILQQ on 10/27/17.
  *
  * We are playing the Guess Game. The game is as follows:
 

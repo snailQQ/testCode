@@ -1,7 +1,7 @@
 package leetcode.leetcode.to400;
 
 /**
- * Created by pengcheng.qi on 10/17/17.
+ * Created by SNAILQQ on 10/17/17.
  * Your task is to calculate ab mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
 
  Example1:
