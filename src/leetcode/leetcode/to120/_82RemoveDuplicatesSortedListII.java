@@ -6,7 +6,7 @@ package leetcode.leetcode.to120;
  * <p/>
  * answer link
  */
-public class _82RemoveDuplicatesSortedListII {
+public class  _82RemoveDuplicatesSortedListII {
     public static class ListNode {
         int val;
         ListNode next;
